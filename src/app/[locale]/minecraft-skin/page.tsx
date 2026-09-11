@@ -1,111 +1,97 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { Link } from '@/i18n/routing';
-import { FAQSchema, BreadcrumbSchema, SoftwareAppSchema } from '@/components/seo';
-import { getMinecraftLanding, MINECRAFT_LANDING_LOCALES } from '@/lib/minecraft-skin';
-import { StepList, FeatureGrid, LandingFaq } from '@/components/minecraft-skin/MinecraftLandingUI';
+import { Link as I18nLink } from '@/i18n/routing';
+import { buildMetadata, canonicalFor, BASE_URL } from '@/lib/seo';
+import { FAQSchema, BreadcrumbSchema } from '@/components/seo';
+import { Breadcrumb, SubpageHero, Section, FaqAccordion, RelatedPages } from '@/components/landing/Landing';
+import { SKIN_PAGES, relatedPages } from '@/lib/skin/pages';
 
-const BASE_URL = 'https://mcskingenerator.com';
-const TOOL_PATH = '/ai-image-effects/ai-minecraft-skin';
+const PATH = '/minecraft-skin';
 
-// Per-locale UI labels (CTA + FAQ heading).
-const LABELS: Record<string, { cta: string; faqTitle: string; stepsTitle: string; featuresTitle: string }> = {
-  en: { cta: 'Create your skin now', faqTitle: 'FAQ', stepsTitle: 'How it works', featuresTitle: 'Why AI' },
-  es: { cta: 'Crea tu skin ahora', faqTitle: 'Preguntas frecuentes', stepsTitle: 'Cómo funciona', featuresTitle: 'Por qué con IA' },
-  pt: { cta: 'Crie sua skin agora', faqTitle: 'Perguntas frequentes', stepsTitle: 'Como funciona', featuresTitle: 'Por que com IA' },
-  de: { cta: 'Jetzt Skin erstellen', faqTitle: 'Häufige Fragen', stepsTitle: 'So funktioniert es', featuresTitle: 'Warum mit KI' },
-};
+export const metadata = buildMetadata({
+  title: 'How to Make a Minecraft Skin – Free Online Guide | MCSkinGenerator',
+  description:
+    'Learn how to make a Minecraft skin the easy way: draw one pixel by pixel, generate it with AI, or start from a template, then download a PNG for Java & Bedrock.',
+  path: PATH,
+});
 
-export function generateStaticParams() {
-  return MINECRAFT_LANDING_LOCALES.map((locale) => ({ locale }));
+const FAQ = [
+  { q: 'What is a Minecraft skin?', a: 'A Minecraft skin is the texture wrapped around your character. It is a small 64×64 PNG image where each region maps to a body part — head, body, arms and legs — plus an outer layer for hats and clothing.' },
+  { q: 'What is the easiest way to make a Minecraft skin?', a: 'The fastest way is to open a browser skin maker, start from a template, recolor it, and download the PNG. No software to install and no account required.' },
+  { q: 'Do I need any software to make a skin?', a: 'No. Everything runs in your browser. You draw on a 64×64 canvas, preview your character in 3D, and export a PNG that Minecraft can read directly.' },
+  { q: 'What resolution should a Minecraft skin be?', a: 'Standard skins are 64×64 pixels. Older skins used 64×32; modern Java and Bedrock both use the full 64×64 layout with a second (overlay) layer.' },
+];
+
+interface Way {
+  title: string;
+  body: string;
+  href: string;
+  cta: string;
 }
+const WAYS: Way[] = [
+  { title: 'Draw it in the editor', body: 'Paint pixel by pixel with tools, a palette and mirror drawing. Best when you want full control.', href: '/', cta: 'Open the skin editor' },
+  { title: 'Generate it with AI', body: 'Describe a character or upload a photo and let AI build the skin, then fine-tune it in the editor.', href: SKIN_PAGES.ai.href, cta: 'Try the AI skin maker' },
+  { title: 'Start from a template', body: 'Pick a ready-made base — knight, robot, hoodie and more — and recolor it in seconds.', href: SKIN_PAGES.custom.href, cta: 'Browse templates' },
+];
 
-function canonicalFor(locale: string): string {
-  const seg = locale === 'en' ? '' : `/${locale}`;
-  return `${BASE_URL}${seg}/minecraft-skin`;
-}
-
-export async function generateMetadata({
-  params: { locale },
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const data = getMinecraftLanding(locale);
-  if (!data) {
-    return { robots: { index: false, follow: false } };
-  }
-
-  const canonicalUrl = canonicalFor(locale);
-  const languages: Record<string, string> = { 'x-default': canonicalFor('en') };
-  for (const l of MINECRAFT_LANDING_LOCALES) languages[l] = canonicalFor(l);
-
-  return {
-    title: data.seo.title,
-    description: data.seo.description,
-    keywords: data.seo.keywords,
-    openGraph: {
-      title: data.seo.title,
-      description: data.seo.description,
-      url: canonicalUrl,
-      siteName: 'MCSkinGenerator',
-      locale: data.ogLocale,
-      type: 'website',
-    },
-    alternates: { canonical: canonicalUrl, languages },
-    robots: { index: true, follow: true },
-  };
-}
-
-export default function MinecraftSkinLandingPage({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
-  const data = getMinecraftLanding(locale);
-  if (!data) {
-    notFound();
-  }
-
-  const labels = LABELS[locale] ?? LABELS.en;
-  const canonicalUrl = canonicalFor(locale);
-
+export default function MinecraftSkinGuidePage() {
   return (
-    <main className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
-      <SoftwareAppSchema
-        name={data.seo.title}
-        description={data.seo.description}
-        url={canonicalUrl}
-        applicationCategory="Game"
-      />
-      <FAQSchema items={data.faq.map((f) => ({ question: f.q, answer: f.a }))} />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', url: locale === 'en' ? BASE_URL : `${BASE_URL}/${locale}` },
-          { name: data.h1, url: canonicalUrl },
-        ]}
-      />
+    <main className="workbench-bg min-h-screen text-ink">
+      <FAQSchema items={FAQ.map((f) => ({ question: f.q, answer: f.a }))} />
+      <BreadcrumbSchema items={[{ name: 'Home', url: BASE_URL }, { name: 'How to Make a Minecraft Skin', url: canonicalFor(PATH) }]} />
 
-      <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">{data.h1}</h1>
-      <p className="text-slate-600 mt-4 leading-relaxed">{data.lead}</p>
+      <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
+        <Breadcrumb title="How to Make a Minecraft Skin" />
+        <div className="mt-3">
+          <SubpageHero
+            eyebrow="GUIDE"
+            h1="How to Make a Minecraft Skin"
+            lead="Three simple ways to make your own Minecraft skin — draw it, generate it with AI, or start from a template — then download a 64×64 PNG for Java & Bedrock."
+          />
+        </div>
 
-      <Link
-        href={TOOL_PATH}
-        className="inline-block mt-6 bg-[#FFD84D] text-slate-900 font-semibold rounded-full px-6 py-2.5 text-sm shadow-[0_10px_30px_rgba(255,216,77,0.35)] transition hover:-translate-y-0.5 hover:bg-[#ffe062]"
-      >
-        {labels.cta}
-      </Link>
+        <Section title="Three ways to make a skin">
+          <div className="mt-2 grid gap-4 sm:grid-cols-3">
+            {WAYS.map((w) => (
+              <I18nLink key={w.title} href={w.href} prefetch={false} className="block border-2 border-ink bg-chalk p-4 shadow-block press-block">
+                <p className="font-pixel text-lg text-ink">{w.title}</p>
+                <p className="mt-2 text-sm text-ink-muted">{w.body}</p>
+                <span className="mt-3 inline-block text-sm font-semibold text-grass-ink">{w.cta} →</span>
+              </I18nLink>
+            ))}
+          </div>
+        </Section>
 
-      <StepList title={labels.stepsTitle} steps={data.steps} />
-      <FeatureGrid title={labels.featuresTitle} features={data.features} />
-      <LandingFaq title={labels.faqTitle} items={data.faq} />
+        <Section title="Java vs Bedrock skins">
+          <p>
+            Both editions use the same 64×64 PNG skin file, so a skin you make here works in either one. The
+            difference is how you apply it: in <span className="font-semibold text-ink">Java Edition</span> you upload
+            the PNG through the Minecraft Launcher or minecraft.net; in{' '}
+            <span className="font-semibold text-ink">Bedrock Edition</span> you import it in-game through the Dressing
+            Room on Windows, iOS or Android. See the{' '}
+            <I18nLink href={SKIN_PAGES.bedrock.href} prefetch={false} className="font-semibold text-grass-ink underline">Bedrock skin guide</I18nLink>{' '}
+            for the exact steps.
+          </p>
+        </Section>
 
-      <div className="mt-10 text-center">
-        <Link
-          href={TOOL_PATH}
-          className="inline-block bg-slate-900 text-white font-semibold rounded-full px-6 py-2.5 text-sm transition hover:bg-slate-700"
-        >
-          {labels.cta}
-        </Link>
+        <Section title="How a Minecraft skin is laid out">
+          <p>
+            A skin texture is an unwrapped map of the character. The top-left holds the head, the middle holds the
+            body and arms, and the lower area holds the legs — each as a small set of cube faces. A second{' '}
+            <span className="font-semibold text-ink">overlay layer</span> sits on top for hats, jackets and sleeves.
+            Characters come in two shapes: <span className="font-semibold text-ink">Classic (Steve)</span> with
+            4-pixel arms and <span className="font-semibold text-ink">Slim (Alex)</span> with 3-pixel arms — you can
+            switch between them in the 3D preview.
+          </p>
+        </Section>
+
+        <Section title="Make your skin now">
+          <p className="mb-3">Ready to start? Open the editor and you will have a downloadable skin in a couple of minutes.</p>
+          <I18nLink href="/" prefetch={false} className="inline-block border-2 border-ink bg-grass px-5 py-2.5 font-semibold text-white shadow-block press-block">
+            Open the Minecraft Skin Maker →
+          </I18nLink>
+        </Section>
+
+        <FaqAccordion items={FAQ} />
+        <RelatedPages pages={relatedPages('', ['custom', 'ai', 'bedrock', 'free'])} />
       </div>
     </main>
   );
