@@ -1,7 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { Link as I18nLink } from '@/i18n/routing';
 import SkinEditor from '@/components/editor/SkinEditor';
+import TemplateCard from '@/components/editor/TemplateCard';
+import { TEMPLATES } from '@/lib/skin/atlas';
 
 const NAV = [
   { label: 'Editor', href: '#editor' },
@@ -9,15 +12,6 @@ const NAV = [
   { label: 'AI Skins', href: '/ai-image-effects/ai-minecraft-skin' },
   { label: 'Bedrock', href: '#make' },
   { label: 'Templates', href: '#start' },
-];
-
-const TEMPLATES = [
-  { name: 'Knight', tag: 'ARMOR', color: '#9AA0A8' },
-  { name: 'Anime Hero', tag: 'ANIME', color: '#2E5AAC' },
-  { name: 'Cute Bunny', tag: 'CUTE', color: '#B0457B' },
-  { name: 'Robot', tag: 'ROBOT', color: '#5B5F66' },
-  { name: 'Street Hoodie', tag: 'HOODIE', color: '#3E8E2A' },
-  { name: 'Creeper Style', tag: 'MOB', color: '#2f7d32' },
 ];
 
 const PROMPTS = ['Samurai golem', 'Mushroom maiden', 'Copper robot'];
@@ -53,6 +47,17 @@ const FAQ = [
 ];
 
 export default function HomePageClient() {
+  const [template, setTemplate] = useState<string | undefined>(undefined);
+  const [templateNonce, setTemplateNonce] = useState(0);
+
+  const loadTemplate = (id: string) => {
+    setTemplate(id);
+    setTemplateNonce((n) => n + 1);
+    if (typeof document !== 'undefined') {
+      document.getElementById('editor')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div className="workbench-bg min-h-screen text-ink">
       {/* Header */}
@@ -87,7 +92,7 @@ export default function HomePageClient() {
               The free skin maker for Minecraft: draw pixel by pixel, preview in 3D, and download a PNG for Java &amp; Bedrock.
             </p>
           </div>
-          <SkinEditor />
+          <SkinEditor template={template} templateNonce={templateNonce} />
         </section>
 
         {/* Quick starters */}
@@ -97,13 +102,7 @@ export default function HomePageClient() {
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             <div className="lg:col-span-2 grid grid-cols-2 gap-4 sm:grid-cols-3">
               {TEMPLATES.map((t) => (
-                <a key={t.name} href="#editor" className="group border-2 border-ink bg-chalk p-3 shadow-block-sm press-block">
-                  <div className="relative pixel-checker-bg flex h-24 items-center justify-center border-2 border-ink/20">
-                    <span className="h-12 w-9 crisp-pixel" style={{ background: t.color, boxShadow: '0 4px 0 rgba(0,0,0,0.15)' }} />
-                    <span className="absolute right-1 top-1 border border-ink bg-ink px-1 text-[9px] font-bold text-chalk">{t.tag}</span>
-                  </div>
-                  <p className="mt-2 text-sm font-semibold">{t.name}</p>
-                </a>
+                <TemplateCard key={t.id} template={t} onSelect={loadTemplate} />
               ))}
             </div>
             <div className="border-2 border-diamond bg-diamond-tint p-5 shadow-block">

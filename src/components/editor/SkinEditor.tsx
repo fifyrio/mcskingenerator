@@ -1,7 +1,14 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { SKIN_SIZE, PALETTE, PARTS, paintDefaultSkin, type SkinPartId } from '@/lib/skin/atlas';
+import { SKIN_SIZE, PALETTE, PARTS, paintDefaultSkin, paintTemplate, type SkinPartId } from '@/lib/skin/atlas';
+
+interface SkinEditorProps {
+  /** Optional template id to load into the canvas. */
+  template?: string;
+  /** Bump this to re-load `template` even if the id is unchanged. */
+  templateNonce?: number;
+}
 
 type Tool = 'pencil' | 'eraser' | 'eyedropper' | 'bucket';
 
@@ -22,7 +29,7 @@ const PART_TABS: { id: SkinPartId; label: string }[] = [
 const VIEW = 512; // visible canvas internal resolution
 const SCALE = VIEW / SKIN_SIZE;
 
-export default function SkinEditor() {
+export default function SkinEditor({ template, templateNonce }: SkinEditorProps = {}) {
   const textureRef = useRef<HTMLCanvasElement | null>(null); // 64x64 source of truth
   const drawRef = useRef<HTMLCanvasElement | null>(null); // scaled editable view
   const preview3dRef = useRef<HTMLCanvasElement | null>(null);
@@ -135,6 +142,14 @@ export default function SkinEditor() {
   useEffect(() => { applyLayerVisibility(); }, [applyLayerVisibility]);
   useEffect(() => { update3d(); }, [model, update3d]);
   useEffect(() => { renderView(); }, [activePart, renderView]);
+
+  // Load a template into the canvas when selected from the home page.
+  useEffect(() => {
+    if (!template) return;
+    paintTemplate(getTexture().getContext('2d')!, template);
+    renderView();
+    update3d();
+  }, [template, templateNonce, getTexture, renderView, update3d]);
 
   // ---- drawing ----
   const setPixel = (px: number, py: number, erase: boolean) => {
