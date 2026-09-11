@@ -1,0 +1,249 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { createAuthenticatedClient } from '@/lib/supabase-server';
+import { cookies } from 'next/headers';
+import { saveKIETaskMetadataKV } from '@/lib/cloudflare-kv';
+import { imageLimiter } from '@/lib/rate-limiter';
+import { KIEImageService } from '@/lib/kie-api/kie-image-service';
+import { screenPrompt } from '@/lib/moderation';
+
+export async function POST(request: NextRequest) {
+  try {
+    const { prompt, imageUrls, metadata, aspectRatio = '1:1' } = await request.json();
+    
+    if (!prompt) {
+      return NextResponse.json(
+        { error: 'Prompt is required' },
+        { status: 400 }
+      );
+    }
+
+    // Get authorization token from header
+    const authHeader = request.headers.get('authorization');
+    const token = authHeader?.replace('Bearer ', '');
+    
+    if (!token) {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
+
+    // Initialize Supabase client and set auth
+    const supabase = await createAuthenticatedClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser(token);
+    
+    // For database operations, use service client to bypass RLS
+    const { createServiceClient } = await import('@/lib/supabase-server');
+    const serviceSupabase = createServiceClient();
+    
+    if (authError || !user) {
+      console.error('Auth error:', authError?.message);
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
+
+    // Screen the prompt against our content policies BEFORE anything else
+    // (queueing, billing, model invocation). Fail closed on deny/flag/error.
+    const moderation = await screenPrompt(prompt, `user_${user.id}`);
+    if (!moderation.allowed) {
+      if (moderation.decision === 'error') {
+        console.error('Moderation unavailable:', moderation.error);
+        return NextResponse.json(
+          {
+            error: 'moderation_unavailable',
+            message: 'Unable to verify your prompt right now. Please try again shortly.',
+          },
+          { status: 503 }
+        );
+      }
+
+      console.warn(`Prompt ${moderation.decision} for user ${user.id}`);
+      return NextResponse.json(
+        {
+          error: 'prompt_rejected',
+          message:
+            'Your prompt was rejected because it violates our content policy. Please revise and try again.',
+        },
+        { status: 400 }
+      );
+    }
+
+    // Check rate limit
+    if (!imageLimiter.isAllowed(user.id)) {
+      const timeUntilReset = imageLimiter.getTimeUntilReset(user.id);
+      const remainingRequests = imageLimiter.getRemainingRequests(user.id);
+      
+      return NextResponse.json(
+        { 
+          error: 'Rate limit exceeded', 
+          timeUntilResetMs: timeUntilReset,
+          remainingRequests: remainingRequests,
+          message: `Too many requests. Please wait ${Math.ceil(timeUntilReset / 1000)} seconds before trying again.`
+        },
+        { status: 429 }
+      );
+    }
+
+
+    // All image generation requires 5 credits - no free tier
+    const creditsRequired = 5;
+    
+    // Get user profile using service client to bypass RLS
+    let { data: profile, error: profileError } = await serviceSupabase
+      .from('user_profiles')
+      .select('credits')
+      .eq('id', user.id)
+      .single();
+
+    if (profileError || !profile) {
+      // Profile doesn't exist, return error
+      console.log('User profile not found for user:', user.id);
+      return NextResponse.json(
+        { error: 'User profile not found. Please complete your profile setup first.' },
+        { status: 404 }
+      );
+    }
+
+    if (creditsRequired > 0 && profile.credits < creditsRequired) {
+      return NextResponse.json(
+        { 
+          error: 'Insufficient credits', 
+          required: creditsRequired, 
+          available: profile.credits 
+        },
+        { status: 402 } // Payment Required
+      );
+    }
+
+    // Check KIE API token is configured
+    const KIE_API_TOKEN = process.env.KIE_API_TOKEN;
+    if (!KIE_API_TOKEN) {
+      return NextResponse.json(
+        { error: 'KIE_API_TOKEN not configured' },
+        { status: 500 }
+      );
+    }
+
+    console.log('Starting KIE image generation task with prompt:', prompt);
+
+    // Initialize KIE service
+    const kieService = new KIEImageService();
+
+    // Create task based on input type
+    let taskId: string;
+    try {
+      if (imageUrls && imageUrls.length > 0) {
+        // Image editing mode (with reference images)
+        console.log(`Creating KIE task with ${imageUrls.length} image(s), aspectRatio: ${aspectRatio}`);
+        taskId = await kieService.createTask(
+          prompt,
+          imageUrls,
+          aspectRatio,
+          'google/nano-banana-edit'
+        );
+      } else {
+        // Text-to-image mode (prompt only)
+        console.log(`Creating KIE prompt-only task, aspectRatio: ${aspectRatio}`);
+        taskId = await kieService.createPromptOnlyTask(
+          prompt,
+          aspectRatio,
+          'google/nano-banana'
+        );
+      }
+      console.log('✅ KIE task created:', taskId);
+    } catch (error: any) {
+      console.error('❌ Failed to create KIE task:', error);
+      return NextResponse.json(
+        {
+          error: 'Failed to create image generation task',
+          message: error.message || 'Unknown error'
+        },
+        { status: 500 }
+      );
+    }
+
+    // Save task metadata to R2
+    const imageType = imageUrls && imageUrls.length > 0 ? 'edit' : 'generation';
+
+    try {
+      await saveKIETaskMetadataKV({
+        taskId,
+        status: 'pending',
+        prompt,
+        imageUrl: imageUrls?.[0] || '',
+        userId: user.id,
+        imageType,
+        metadata: metadata ?? undefined,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      });
+      console.log('✅ Task metadata saved to R2');
+    } catch (error) {
+      console.error('⚠️  Failed to save task metadata:', error);
+      // Continue anyway - callback can still work
+    }
+
+    // Deduct credits via credit transaction ONLY if cost > 0
+    if (creditsRequired > 0) {
+      const { error: transactionError } = await serviceSupabase
+        .from('credit_transactions')
+        .insert([{
+          user_id: user.id,
+          amount: -creditsRequired,
+          transaction_type: 'usage',
+          description: 'AI image generation',
+          image_id: null
+        }]);
+
+      if (transactionError) {
+        console.error('Failed to create credit transaction:', transactionError);
+        // Consider whether to return error or just log it since image is already generated
+        // return NextResponse.json(
+        //   { error: 'Failed to process credit deduction' },
+        //   { status: 500 }
+        // );
+      }
+    } else {
+      console.log('Free generation - skipping credit deduction.');
+    }
+
+    // Return taskId for client-side polling
+    return NextResponse.json({
+      success: true,
+      taskId: taskId,
+      status: 'pending',
+      message: 'Image generation started. Use the taskId to check status.',
+      originalPrompt: prompt,
+      creditsUsed: creditsRequired,
+      creditsRemaining: profile.credits - creditsRequired
+    });
+
+  } catch (error: any) {
+    console.error('Image generation error:', error);
+
+    // Handle KIE API errors
+    if (error?.message?.includes('KIE API')) {
+      return NextResponse.json(
+        {
+          error: 'Image generation service error',
+          message: error.message || 'Failed to communicate with image generation service',
+        },
+        { status: 503 } // Service Unavailable
+      );
+    }
+
+    if (error?.status === 400) {
+      return NextResponse.json(
+        { error: 'Invalid request', message: error.message },
+        { status: 400 }
+      );
+    }
+
+    return NextResponse.json(
+      { error: `Image generation failed: ${error instanceof Error ? error.message : 'Unknown error'}` },
+      { status: 500 }
+    );
+  }
+}

@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MCSkinGenerator – Free Minecraft Skin Maker &amp; Editor</title>
+<!-- Google Fonts: Pixelify Sans, Space Grotesk, Space Mono, Chivo -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;family=Pixelify+Sans:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#5b4300",
+            "primary-fixed": "#66fea2",
+            "on-primary-fixed": "#00210e",
+            "secondary": "#44dbd8",
+            "secondary-fixed-dim": "#44dbd8",
+            "on-secondary-container": "#004544",
+            "primary-container": "#3ddc84",
+            "outline": "#869587",
+            "on-primary-fixed-variant": "#00522b",
+            "on-error": "#690005",
+            "on-secondary-fixed": "#00201f",
+            "on-primary": "#00391c",
+            "on-primary-container": "#005c31",
+            "tertiary-container": "#ecbb49",
+            "tertiary": "#ffd98a",
+            "on-surface": "#dfe2ec",
+            "on-tertiary-container": "#664b00",
+            "on-surface-variant": "#bbcbbc",
+            "on-secondary": "#003736",
+            "background": "#0f141a",
+            "secondary-container": "#00bcb9",
+            "surface-container-highest": "#31353c",
+            "error": "#ffb4ab",
+            "tertiary-fixed-dim": "#f0c04d",
+            "surface-container-high": "#262a31",
+            "surface-variant": "#31353c",
+            "secondary-fixed": "#68f7f4",
+            "surface-container-low": "#181c23",
+            "on-background": "#dfe2ec",
+            "inverse-on-surface": "#2d3138",
+            "on-tertiary-fixed": "#251a00",
+            "surface-dim": "#0f141a",
+            "surface": "#0f141a",
+            "tertiary-fixed": "#ffdf9d",
+            "on-secondary-fixed-variant": "#00504e",
+            "on-error-container": "#ffdad6",
+            "primary": "#60f99e",
+            "primary-fixed-dim": "#43e188",
+            "surface-container": "#1c2027",
+            "surface-tint": "#43e188",
+            "inverse-primary": "#006d3b",
+            "surface-container-lowest": "#0a0e15",
+            "inverse-surface": "#dfe2ec",
+            "on-tertiary": "#3f2e00",
+            "surface-bright": "#353941",
+            "error-container": "#93000a",
+            "outline-variant": "#3c4a3f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "2xl": "32px",
+            "md": "12px",
+            "gutter-desktop": "16px",
+            "dock-width-right": "320px",
+            "xl": "24px",
+            "gutter-mobile": "8px",
+            "xs": "4px",
+            "2xs": "2px",
+            "4xl": "64px",
+            "lg": "16px",
+            "px": "1px",
+            "dock-width-left": "280px",
+            "sm": "8px",
+            "3xl": "48px",
+            "grid-unit": "8px"
+          },
+          "fontFamily": {
+            "body-lg": ["Chivo"],
+            "display-lg": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "label-lg": ["Space Mono"],
+            "display-lg-mobile": ["Space Grotesk"],
+            "body-md": ["Chivo"],
+            "headline-md": ["Space Grotesk"],
+            "label-md": ["Space Mono"],
+            "label-sm": ["Space Mono"],
+            "body-sm": ["Chivo"],
+            "headline-lg": ["Space Grotesk"],
+            "code-md": ["Space Mono"],
+            "pixel": ["'Pixelify Sans'", "monospace"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-lg": ["13px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.04em", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "code-md": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+
+    /* Tactile Minecraft Voxel Shadows & Mechanical Depressions */
+    .tactile-box {
+      box-shadow: 4px 4px 0px #000000;
+    }
+    .tactile-box-sm {
+      box-shadow: 2px 2px 0px #000000;
+    }
+    .tactile-press:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px #000000;
+    }
+    .tactile-press-sm:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0px #000000;
+    }
+
+    /* Ambient Torch Glow in Deepslate Workshop */
+    .torch-bleed {
+      background: radial-gradient(ellipse 75% 55% at 50% -10%, rgba(255, 159, 67, 0.16) 0%, rgba(18, 20, 24, 0) 80%);
+    }
+
+    /* Grid Texture for UV Canvas */
+    .uv-grid {
+      background-size: 16px 16px;
+      background-image: 
+        linear-gradient(to right, rgba(60, 74, 63, 0.25) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(60, 74, 63, 0.25) 1px, transparent 1px);
+    }
+    .pixel-checker {
+      background-color: #121418;
+      background-image: 
+        linear-gradient(45deg, #181c23 25%, transparent 25%), 
+        linear-gradient(-45deg, #181c23 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #181c23 75%), 
+        linear-gradient(-45deg, transparent 75%, #181c23 75%);
+      background-size: 12px 12px;
+      background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #121418;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2E343D;
+      border: 1px solid #000000;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4FE3E0;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen selection:bg-primary selection:text-on-primary font-body-md text-body-md overflow-x-hidden">
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT 1: TopNavBar                                             -->
+<!-- ========================================================================= -->
+<header class="sticky top-0 z-50 w-full h-12 bg-surface-container-lowest dark:bg-inverse-surface border-b-2 border-on-surface dark:border-outline-variant shadow-[0_2px_0px_#1B1B1F] dark:shadow-none transition-colors">
+<div class="w-full px-4 md:px-6 flex items-center justify-between mx-auto h-full">
+<!-- Brand Logo Anchor -->
+<div class="font-display-xl text-headline-sm tracking-tight text-on-surface dark:text-inverse-on-surface flex items-center gap-2 select-none">
+<div class="w-6 h-6 bg-surface-container border-2 border-outline-variant flex items-center justify-center shadow-[2px_2px_0px_#000000]">
+<span class="material-symbols-outlined text-primary text-base leading-none">view_in_ar</span>
+</div>
+<a class="font-pixel text-headline-sm text-on-surface hover:text-primary transition-colors tracking-wide" href="#">MCSkinGenerator</a>
+<span class="hidden sm:inline-block px-1.5 py-0.5 text-label-sm font-label-sm border border-outline-variant bg-surface-container-low text-tertiary">v3.2</span>
+</div>
+<!-- Navigation Links (Active state: Editor) -->
+<nav class="hidden md:flex items-center space-x-6 text-label-md font-label-md">
+<!-- Editor is Active -->
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-0.5 font-bold flex items-center gap-1.5 transition-colors" href="#editor">
+<span class="w-2 h-2 bg-primary inline-block shadow-[1px_1px_0px_#000000]"></span>
+          Editor
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface font-medium hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform duration-75 hover:-translate-x-0.5 hover:-translate-y-0.5 px-2 py-1" href="#skin-packs">
+          Skin Packs
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface font-medium hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform duration-75 hover:-translate-x-0.5 hover:-translate-y-0.5 px-2 py-1 flex items-center gap-1" href="#ai-skins">
+<span class="w-1.5 h-1.5 bg-secondary"></span>
+          AI Skins
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface font-medium hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform duration-75 hover:-translate-x-0.5 hover:-translate-y-0.5 px-2 py-1" href="#bedrock">
+          Bedrock
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface font-medium hover:bg-surface-container dark:hover:bg-surface-container-high transition-transform duration-75 hover:-translate-x-0.5 hover:-translate-y-0.5 px-2 py-1" href="#templates">
+          Templates
+        </a>
+</nav>
+<!-- Trailing Action Buttons -->
+<div class="flex items-center gap-2 md:gap-3">
+<!-- Icon quick actions -->
+<div class="hidden lg:flex items-center gap-1 border-r-2 border-outline-variant pr-2 mr-1">
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-low border border-outline-variant hover:border-on-surface text-on-surface-variant hover:text-on-surface active:translate-x-0.5 active:translate-y-0.5 transition-all" title="Undo (Ctrl+Z)">
+<span class="material-symbols-outlined text-sm">undo</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-low border border-outline-variant hover:border-on-surface text-on-surface-variant hover:text-on-surface active:translate-x-0.5 active:translate-y-0.5 transition-all" title="Redo (Ctrl+Y)">
+<span class="material-symbols-outlined text-sm">redo</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center bg-surface-container-low border border-outline-variant hover:border-on-surface text-on-surface-variant hover:text-on-surface active:translate-x-0.5 active:translate-y-0.5 transition-all" title="Palette Library">
+<span class="material-symbols-outlined text-sm">palette</span>
+</button>
+</div>
+<!-- Trailing Secondary: Import PNG -->
+<button class="bg-surface-container-high hover:bg-surface-variant text-on-surface border-2 border-outline-variant px-3 py-1 text-label-md font-label-md tactile-box-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center gap-1.5 transition-transform duration-75">
+<span class="material-symbols-outlined text-sm">file_upload</span>
+<span>Import PNG</span>
+</button>
+<!-- Trailing Primary: Download PNG -->
+<button class="bg-primary-container hover:bg-primary-fixed text-on-primary-fixed border-2 border-black px-3.5 py-1 text-label-md font-label-md tactile-box-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center gap-1.5 transition-transform duration-75">
+<span class="material-symbols-outlined text-sm">download</span>
+<span>Download PNG</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ========================================================================= -->
+<!-- HERO: THE MINER'S WORKBENCH SKIN EDITOR                                   -->
+<!-- ========================================================================= -->
+<main class="relative torch-bleed border-b-2 border-outline-variant pb-12 pt-6">
+<div class="max-w-[1440px] mx-auto px-4 md:px-6">
+<!-- Headline & Lead Subtext -->
+<div class="mb-5 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="inline-flex items-center gap-2 px-2 py-0.5 mb-2 bg-surface-container-high border border-outline-variant text-label-sm font-label-sm text-secondary">
+<span class="w-1.5 h-1.5 bg-secondary animate-pulse"></span>
+            NEO-VOXEL WORKSHOP READY · JAVA 1.21 &amp; BEDROCK EDITION
+          </div>
+<h1 class="font-pixel text-2xl md:text-3xl lg:text-4xl text-on-surface tracking-wide drop-shadow-[2px_2px_0px_#000]">
+            Minecraft Skin Maker – Create Your Own Skin Online
+          </h1>
+<p class="text-on-surface-variant font-body-md text-body-md mt-1 max-w-2xl">
+            The free skin maker for Minecraft: draw pixel by pixel, preview in 3D, download for Java &amp; Bedrock. Zero login required.
+          </p>
+</div>
+<!-- Quick Status Metrics -->
+<div class="flex items-center gap-3 self-start md:self-auto text-label-sm font-label-sm">
+<div class="bg-surface-container border-2 border-outline-variant px-3 py-1.5 flex items-center gap-2 tactile-box-sm">
+<span class="text-outline">CANVAS:</span>
+<span class="text-primary font-bold">64×64 RGBA</span>
+</div>
+<div class="bg-surface-container border-2 border-outline-variant px-3 py-1.5 flex items-center gap-2 tactile-box-sm">
+<span class="text-outline">FORMAT:</span>
+<span class="text-tertiary font-bold">Dual-Layer 3D</span>
+</div>
+</div>
+</div>
+<!-- ===================================================================== -->
+<!-- THREE-PANE EDITOR WORKBENCH (Desktop Fixed Dock Paradigm)            -->
+<!-- ===================================================================== -->
+<div class="w-full bg-surface-container border-2 border-outline-variant tactile-box grid grid-cols-1 lg:grid-cols-12 overflow-hidden" id="editor">
+<!-- ========================================== -->
+<!-- PANE 1: LEFT TOOL DOCK (Col-12 -> Col-2/3) -->
+<!-- ========================================== -->
+<div class="lg:col-span-2 bg-surface-container-low border-b-2 lg:border-b-0 lg:border-r-2 border-outline-variant p-3 flex flex-col justify-between select-none">
+<div>
+<!-- Section Header -->
+<div class="flex items-center justify-between pb-2 mb-3 border-b border-outline-variant">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Tool Matrix</span>
+<span class="text-label-sm font-label-sm text-primary">v0.94</span>
+</div>
+<!-- Main Tool Grid: 8 Tactile Slot Buttons -->
+<div class="grid grid-cols-4 lg:grid-cols-2 gap-2 mb-4">
+<!-- Pencil (Active) -->
+<button class="h-10 flex flex-col items-center justify-center bg-surface-container-highest border-2 border-primary text-primary tactile-box-sm" title="Pencil [B]">
+<span class="material-symbols-outlined text-lg">edit</span>
+<span class="text-[9px] font-label-sm">Pencil</span>
+</button>
+<!-- Eraser -->
+<button class="h-10 flex flex-col items-center justify-center bg-surface-container border-2 border-outline-variant text-on-surface hover:border-outline hover:text-primary transition-all" title="Eraser [E]">
+<span class="material-symbols-outlined text-lg">ink_eraser</span>
+<span class="text-[9px] font-label-sm">Eraser</span>
+</button>
+<!-- Eyedropper -->
+<button class="h-10 flex flex-col items-center justify-center bg-surface-container border-2 border-outline-variant text-on-surface hover:border-outline hover:text-primary transition-all" title="Eyedropper [I]">
+<span class="material-symbols-outlined text-lg">colorize</span>
+<span class="text-[9px] font-label-sm">Picker</span>
+</button>
+<!-- Bucket Fill -->
+<button class="h-10 flex flex-col items-center justify-center bg-surface-container border-2 border-outline-variant text-on-surface hover:border-outline hover:text-primary transition-all" title="Paint Bucket [G]">
+<span class="material-symbols-outlined text-lg">format_color_fill</span>
+<span class="text-[9px] font-label-sm">Bucket</span>
+</button>
+<!-- Mirror Toggle (Active Indication) -->
+<button class="h-10 flex flex-col items-center justify-center bg-surface-container border-2 border-tertiary-container text-tertiary tactile-box-sm" title="Symmetry Mirror [M]">
+<span class="material-symbols-outlined text-lg">swap_horiz</span>
+<span class="text-[9px] font-label-sm">Mirror</span>
+</button>
+<!-- Zoom Magnifier -->
+<button class="h-10 flex flex-col items-center justify-center bg-surface-container border-2 border-outline-variant text-on-surface hover:border-outline hover:text-primary transition-all" title="Pan &amp; Zoom [Z]">
+<span class="material-symbols-outlined text-lg">zoom_in</span>
+<span class="text-[9px] font-label-sm">Zoom</span>
+</button>
+<!-- Color Shading Lighten -->
+<button class="h-10 flex flex-col items-center justify-center bg-surface-container border-2 border-outline-variant text-on-surface hover:border-outline hover:text-primary transition-all" title="Lighten Step">
+<span class="material-symbols-outlined text-lg">brightness_high</span>
+<span class="text-[9px] font-label-sm">Shade +</span>
+</button>
+<!-- Color Shading Darken -->
+<button class="h-10 flex flex-col items-center justify-center bg-surface-container border-2 border-outline-variant text-on-surface hover:border-outline hover:text-primary transition-all" title="Darken Step">
+<span class="material-symbols-outlined text-lg">brightness_low</span>
+<span class="text-[9px] font-label-sm">Shade -</span>
+</button>
+</div>
+<!-- Active Color & Coordinates Preview -->
+<div class="bg-surface-container p-2.5 border-2 border-outline-variant mb-3">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm text-outline">Active Tone</span>
+<span class="text-code-md font-code-md text-primary font-bold">#3DDC84</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-[#3DDC84] border-2 border-black shadow-inner flex-shrink-0"></div>
+<div class="w-8 h-8 bg-[#1C2027] border-2 border-outline-variant flex-shrink-0"></div>
+<div class="flex-1 text-right text-label-sm font-label-sm text-on-surface-variant">
+<span>ALPHA: 100%</span><br/>
+<span class="text-secondary">U:24 V:18</span>
+</div>
+</div>
+</div>
+<!-- 16-Color Ore Palette Swatches -->
+<div class="mb-3">
+<div class="flex items-center justify-between mb-1.5">
+<span class="text-label-sm font-label-sm text-outline">Voxel Swatches</span>
+<span class="material-symbols-outlined text-xs text-outline cursor-pointer hover:text-on-surface">tune</span>
+</div>
+<div class="grid grid-cols-8 gap-1 p-1 bg-surface-container-lowest border border-outline-variant">
+<button class="w-full aspect-square bg-[#0f141a] border border-black hover:scale-110 transition-transform" title="Deepslate"></button>
+<button class="w-full aspect-square bg-[#2E343D] border border-black hover:scale-110 transition-transform" title="Bedrock"></button>
+<button class="w-full aspect-square bg-[#869587] border border-black hover:scale-110 transition-transform" title="Stone"></button>
+<button class="w-full aspect-square bg-[#ECE8DF] border border-black hover:scale-110 transition-transform" title="Bone"></button>
+<button class="w-full aspect-square bg-[#3DDC84] border-2 border-white scale-110" title="Emerald Green"></button>
+<button class="w-full aspect-square bg-[#1b8c4c] border border-black hover:scale-110 transition-transform" title="Dark Emerald"></button>
+<button class="w-full aspect-square bg-[#4FE3E0] border border-black hover:scale-110 transition-transform" title="Diamond Cyan"></button>
+<button class="w-full aspect-square bg-[#1f7d7b] border border-black hover:scale-110 transition-transform" title="Deep Diamond"></button>
+<button class="w-full aspect-square bg-[#F2C14E] border border-black hover:scale-110 transition-transform" title="Gold Ore"></button>
+<button class="w-full aspect-square bg-[#966b15] border border-black hover:scale-110 transition-transform" title="Raw Gold"></button>
+<button class="w-full aspect-square bg-[#FF4D4D] border border-black hover:scale-110 transition-transform" title="Redstone Dust"></button>
+<button class="w-full aspect-square bg-[#851616] border border-black hover:scale-110 transition-transform" title="Dark Redstone"></button>
+<button class="w-full aspect-square bg-[#FF9F43] border border-black hover:scale-110 transition-transform" title="Torch Amber"></button>
+<button class="w-full aspect-square bg-[#7c4314] border border-black hover:scale-110 transition-transform" title="Leather Brown"></button>
+<button class="w-full aspect-square bg-[#c28d68] border border-black hover:scale-110 transition-transform" title="Oak Bark"></button>
+<button class="w-full aspect-square bg-[#5a3382] border border-black hover:scale-110 transition-transform" title="Obsidian Purple"></button>
+</div>
+</div>
+</div>
+<!-- Quick Hotkey Info -->
+<div class="pt-2 border-t border-outline-variant text-[10px] font-label-sm text-outline flex items-center justify-between">
+<span>B: PENCIL</span>
+<span>E: ERASER</span>
+<span>M: MIRROR</span>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- PANE 2: CENTER UV TEXTURE CANVAS (Col-6/7) -->
+<!-- ========================================== -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-4 flex flex-col relative min-h-[460px]">
+<!-- UV Header Strip: Body Selector & Coordinates -->
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-2 border-b-2 border-outline-variant select-none">
+<!-- Body Part Tabs -->
+<div class="flex items-center gap-1 overflow-x-auto text-label-sm font-label-sm">
+<button class="px-2.5 py-1 bg-surface-container-high border-2 border-primary text-primary font-bold">ALL</button>
+<button class="px-2.5 py-1 bg-surface-container border border-outline-variant text-on-surface hover:border-outline">HEAD</button>
+<button class="px-2.5 py-1 bg-surface-container border border-outline-variant text-on-surface hover:border-outline">BODY</button>
+<button class="px-2.5 py-1 bg-surface-container border border-outline-variant text-on-surface hover:border-outline">ARMS</button>
+<button class="px-2.5 py-1 bg-surface-container border border-outline-variant text-on-surface hover:border-outline">LEGS</button>
+<button class="px-2.5 py-1 bg-surface-container border border-secondary text-secondary hover:bg-surface-container-high">OUTER HAT</button>
+</div>
+<!-- Canvas Viewport Controls -->
+<div class="flex items-center gap-1 text-label-sm font-label-sm">
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container border border-outline-variant text-on-surface hover:text-primary">-</button>
+<span class="px-2 py-0.5 bg-surface-container-low border border-outline-variant text-outline">100%</span>
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container border border-outline-variant text-on-surface hover:text-primary">+</button>
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container border border-outline-variant text-on-surface hover:text-primary ml-1" title="Reset Grid">
+<span class="material-symbols-outlined text-xs">grid_on</span>
+</button>
+</div>
+</div>
+<!-- The Unwrapped 64x64 UV Texture Canvas (Visual Map) -->
+<div class="flex-1 flex items-center justify-center p-2 relative">
+<div class="relative w-full max-w-[420px] aspect-square pixel-checker border-2 border-outline-variant tactile-box p-3 flex flex-col justify-between">
+<!-- Subtle Canvas Coordinate HUD -->
+<div class="absolute top-1 left-1.5 text-[9px] font-label-sm text-outline z-10 select-none">
+                0,0 UV TEXTURE MAP [64x64]
+              </div>
+<div class="absolute bottom-1 right-1.5 text-[9px] font-label-sm text-primary z-10 select-none">
+                CURSOR: X:24 Y:18 (TORSO FRONT)
+              </div>
+<!-- Unwrapped Skin Regions Representation (Voxel Schematic) -->
+<div class="w-full h-full uv-grid relative border border-outline-variant/60 flex flex-col p-1.5 gap-2">
+<!-- Head Unwrapped Cluster -->
+<div class="flex items-center gap-2">
+<div class="text-[9px] font-label-sm text-outline w-12 text-right">HEAD</div>
+<div class="flex gap-1 items-end">
+<!-- Head Top / Bottom / Sides -->
+<div class="w-8 h-8 bg-[#3DDC84]/20 border border-primary flex items-center justify-center text-[8px] font-mono text-primary">TOP</div>
+<div class="w-8 h-8 bg-[#3DDC84]/40 border-2 border-primary flex flex-col items-center justify-center text-[8px] font-mono text-primary font-bold shadow-[0_0_8px_rgba(61,220,132,0.3)]">
+<span>FACE</span>
+<div class="w-4 h-1 bg-black mt-0.5"></div>
+</div>
+<div class="w-8 h-8 bg-[#3DDC84]/20 border border-primary flex items-center justify-center text-[8px] font-mono text-primary">R</div>
+<div class="w-8 h-8 bg-[#3DDC84]/20 border border-primary flex items-center justify-center text-[8px] font-mono text-primary">BACK</div>
+<div class="w-8 h-8 bg-[#3DDC84]/20 border border-primary flex items-center justify-center text-[8px] font-mono text-primary">L</div>
+</div>
+<!-- Outer Overlay Tag -->
+<div class="ml-auto px-1.5 py-0.5 border border-secondary text-secondary text-[8px] font-label-sm">
+                    HELMET OVERLAY
+                  </div>
+</div>
+<!-- Torso & Arms Unwrapped Cluster -->
+<div class="flex items-center gap-2">
+<div class="text-[9px] font-label-sm text-outline w-12 text-right">TORSO</div>
+<div class="flex gap-1 items-center">
+<!-- Right Arm -->
+<div class="w-6 h-12 bg-surface-container-high border border-outline flex items-center justify-center text-[7px] text-outline">R.ARM</div>
+<!-- Torso Front -->
+<div class="w-12 h-12 bg-surface-container-highest border-2 border-secondary flex flex-col items-center justify-center text-[8px] text-secondary font-bold relative">
+<span>CHEST</span>
+<!-- Pixel mock pattern -->
+<div class="grid grid-cols-3 gap-0.5 mt-1">
+<div class="w-1.5 h-1.5 bg-[#4FE3E0]"></div>
+<div class="w-1.5 h-1.5 bg-[#3DDC84]"></div>
+<div class="w-1.5 h-1.5 bg-[#4FE3E0]"></div>
+</div>
+</div>
+<!-- Left Arm -->
+<div class="w-6 h-12 bg-surface-container-high border border-outline flex items-center justify-center text-[7px] text-outline">L.ARM</div>
+<!-- Torso Back -->
+<div class="w-12 h-12 bg-surface-container-high border border-outline-variant flex items-center justify-center text-[8px] text-outline">BACK</div>
+</div>
+<div class="ml-auto text-right">
+<span class="text-[8px] font-label-sm text-tertiary block">JACKET LAYER: ON</span>
+<span class="text-[8px] font-label-sm text-outline block">ALPHA 0.0</span>
+</div>
+</div>
+<!-- Legs Cluster -->
+<div class="flex items-center gap-2 mt-1">
+<div class="text-[9px] font-label-sm text-outline w-12 text-right">LEGS</div>
+<div class="flex gap-1 items-start">
+<div class="w-6 h-12 bg-surface-container border border-outline-variant flex items-center justify-center text-[7px] text-outline">R.LEG</div>
+<div class="w-6 h-12 bg-surface-container border border-outline-variant flex items-center justify-center text-[7px] text-outline">L.LEG</div>
+<div class="w-12 h-6 bg-surface-container-low border border-outline-variant flex items-center justify-center text-[7px] text-outline">PANTS OVERLAY</div>
+</div>
+<!-- Symmetrical Indicator -->
+<div class="ml-auto px-2 py-1 bg-surface-container border border-tertiary text-tertiary text-[9px] font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">tune</span>
+<span>X-SYMMETRY ACTIVE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Canvas Status Bar -->
+<div class="pt-2 border-t border-outline-variant flex items-center justify-between text-label-sm font-label-sm text-outline">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1 text-on-surface">
+<span class="w-2 h-2 bg-primary inline-block"></span> Standard 64-bit Canvas
+              </span>
+<span>Zoom: 100% (Native)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-tertiary">Grid Snap: 1px Voxel</span>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- PANE 3: RIGHT 3D CHARACTER PREVIEW (Col-4) -->
+<!-- ========================================== -->
+<div class="lg:col-span-4 bg-surface-container-high border-t-2 lg:border-t-0 lg:border-l-2 border-outline-variant p-4 flex flex-col justify-between">
+<div>
+<!-- Header Strip: 3D View Status & Model Type -->
+<div class="flex items-center justify-between pb-2 mb-3 border-b-2 border-outline-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 bg-secondary inline-block animate-ping"></span>
+<span class="text-label-sm font-label-sm text-on-surface uppercase tracking-wider font-bold">3D Viewport</span>
+</div>
+<span class="px-2 py-0.5 bg-surface-container border border-outline-variant text-[10px] font-label-sm text-secondary">
+                Drag to spin 360°
+              </span>
+</div>
+<!-- 3D Avatar Stand Platform (Simulated 3D Engine Preview) -->
+<div class="w-full aspect-[4/5] bg-surface-container-lowest border-2 border-outline-variant tactile-box relative flex items-center justify-center overflow-hidden group">
+<!-- Subtle Pedestal Gradient & Torch Rim Light -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_75%,rgba(79,227,224,0.12)_0%,transparent_70%)] pointer-events-none"></div>
+<!-- Top-right Orbit Gizmo -->
+<div class="absolute top-2 right-2 flex flex-col gap-1 z-10">
+<button class="w-7 h-7 bg-surface-container/90 border border-outline-variant text-on-surface hover:text-secondary flex items-center justify-center" title="Reset Camera">
+<span class="material-symbols-outlined text-sm">3d_rotation</span>
+</button>
+<button class="w-7 h-7 bg-surface-container/90 border border-outline-variant text-on-surface hover:text-secondary flex items-center justify-center" title="Toggle Walk Pose">
+<span class="material-symbols-outlined text-sm">directions_walk</span>
+</button>
+</div>
+<!-- The Blocky 3D Minecraft Avatar Illustration -->
+<div class="relative flex flex-col items-center select-none cursor-grab active:cursor-grabbing transition-transform group-hover:scale-105 duration-150">
+<!-- Head Cube -->
+<div class="w-16 h-16 bg-[#3ddc84] border-2 border-black relative shadow-[3px_3px_0px_#000] flex flex-col justify-end p-1">
+<!-- Pixel eyes & hair overlay -->
+<div class="w-full flex justify-between px-1 mb-2">
+<div class="w-3 h-2 bg-white flex items-center"><div class="w-1.5 h-2 bg-[#004544]"></div></div>
+<div class="w-3 h-2 bg-white flex items-center"><div class="w-1.5 h-2 bg-[#004544]"></div></div>
+</div>
+<div class="w-4 h-1 bg-[#121418] mx-auto mb-1"></div>
+<!-- Outer 3D Hat Rim (Simulated floating layer) -->
+<div class="absolute -inset-1 border border-secondary/70 pointer-events-none"></div>
+</div>
+<!-- Upper Body: Torso and Arms -->
+<div class="flex items-start mt-0.5">
+<!-- Left Arm -->
+<div class="w-8 h-24 bg-[#232832] border-2 border-black -mr-0.5 shadow-[2px_2px_0px_#000] relative">
+<div class="w-full h-6 bg-[#3ddc84] border-b border-black"></div>
+</div>
+<!-- Torso -->
+<div class="w-16 h-24 bg-[#1C2027] border-2 border-black z-10 shadow-[3px_3px_0px_#000] relative p-1">
+<div class="w-full h-8 bg-[#3ddc84]/30 border border-dashed border-primary flex items-center justify-center text-[7px] font-label-sm text-primary">
+                      CYBER ARMOR
+                    </div>
+<div class="w-2 h-2 bg-secondary absolute bottom-3 left-3 shadow-[0_0_6px_#44dbd8]"></div>
+<div class="w-2 h-2 bg-tertiary absolute bottom-3 right-3 shadow-[0_0_6px_#ffd98a]"></div>
+<!-- Outer Jacket outline -->
+<div class="absolute -inset-1 border border-secondary/40 pointer-events-none"></div>
+</div>
+<!-- Right Arm -->
+<div class="w-8 h-24 bg-[#232832] border-2 border-black -ml-0.5 shadow-[2px_2px_0px_#000] relative">
+<div class="w-full h-6 bg-[#3ddc84] border-b border-black"></div>
+</div>
+</div>
+<!-- Lower Body: Legs -->
+<div class="flex items-start -mt-0.5">
+<div class="w-8 h-24 bg-[#121418] border-2 border-black shadow-[2px_2px_0px_#000] relative">
+<div class="w-full h-8 bg-[#2E343D] border-t-2 border-black absolute bottom-0"></div>
+</div>
+<div class="w-8 h-24 bg-[#121418] border-2 border-black -ml-0.5 shadow-[2px_2px_0px_#000] relative">
+<div class="w-full h-8 bg-[#2E343D] border-t-2 border-black absolute bottom-0"></div>
+</div>
+</div>
+<!-- Deep Shadow Pedestal -->
+<div class="w-36 h-4 bg-black/80 rounded-full blur-xs mt-2"></div>
+</div>
+<!-- Quick Pose Tag -->
+<div class="absolute bottom-2 left-2 bg-surface-container/90 border border-outline-variant px-2 py-0.5 text-[9px] font-label-sm text-outline">
+                RENDER: CYBER EMERALD VOXEL
+              </div>
+</div>
+<!-- Model Switcher: Classic (4px) vs Slim (3px) -->
+<div class="mt-3">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Model Architecture:</span>
+<span class="text-on-surface">Alex 3px / Steve 4px</span>
+</div>
+<div class="grid grid-cols-2 gap-1.5 p-1 bg-surface-container-lowest border-2 border-outline-variant">
+<button class="py-1.5 text-center text-label-sm font-label-sm font-bold bg-primary text-on-primary-fixed border border-black tactile-box-sm">
+                  Classic (4px Steve)
+                </button>
+<button class="py-1.5 text-center text-label-sm font-label-sm text-on-surface hover:bg-surface-container transition-colors">
+                  Slim (3px Alex)
+                </button>
+</div>
+</div>
+<!-- Dual Layer Visibility Switches -->
+<div class="mt-3 grid grid-cols-2 gap-2 text-label-sm font-label-sm">
+<label class="flex items-center gap-2 p-2 bg-surface-container border border-outline-variant cursor-pointer hover:border-outline select-none">
+<input checked="" class="w-4 h-4 rounded-none bg-surface-container-lowest border-2 border-outline-variant text-primary focus:ring-0" type="checkbox"/>
+<span class="text-on-surface font-medium">Base Layer</span>
+</label>
+<label class="flex items-center gap-2 p-2 bg-surface-container border border-secondary/60 cursor-pointer hover:border-secondary select-none">
+<input checked="" class="w-4 h-4 rounded-none bg-surface-container-lowest border-2 border-secondary text-secondary focus:ring-0" type="checkbox"/>
+<span class="text-secondary font-medium">Outer 3D Layer</span>
+</label>
+</div>
+</div>
+<!-- CTA Export Tray -->
+<div class="pt-4 border-t-2 border-outline-variant mt-4">
+<!-- Large Emerald Primary CTA -->
+<button class="w-full py-3 px-4 bg-primary hover:bg-primary-fixed text-on-primary-fixed font-pixel text-lg font-bold border-2 border-black tactile-box tactile-press flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-xl">download</span>
+<span>DOWNLOAD PNG (64x64)</span>
+</button>
+<!-- Bedrock .mcpack secondary link -->
+<div class="mt-2.5 text-center">
+<a class="text-label-sm font-label-sm text-tertiary hover:underline inline-flex items-center gap-1" href="#bedrock">
+<span class="material-symbols-outlined text-xs">package_2</span>
+                Export to Bedrock Skin Pack (.mcpack)
+              </a>
+</div>
+</div>
+</div>
+</div>
+<!-- END THREE-PANE EDITOR WORKBENCH -->
+</div>
+</main>
+<!-- ========================================================================= -->
+<!-- SECTION 3: "START FROM..." ROW (Curated Skins & AI Generator Card)       -->
+<!-- ========================================================================= -->
+<section class="py-12 border-b-2 border-outline-variant bg-surface-container-lowest" id="templates">
+<div class="max-w-[1440px] mx-auto px-4 md:px-6">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="font-pixel text-xl md:text-2xl text-on-surface tracking-wide">
+            Start from a Crafted Template
+          </h2>
+<p class="text-on-surface-variant font-body-sm text-body-sm">
+            Load a battle-tested base skin directly into the editor canvas, or spawn an original concept with neural AI.
+          </p>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-label-sm font-label-sm text-outline">
+<span class="w-2 h-2 bg-primary"></span> 6 Curated Archetypes
+        </div>
+</div>
+<!-- Horizontal Cards Strip (Responsive Bento Row) -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-3">
+<!-- Skin 1: Knight -->
+<div class="bg-surface-container border-2 border-outline-variant p-3 tactile-box hover:-translate-y-1 hover:border-outline transition-all flex flex-col justify-between group">
+<div class="w-full aspect-square bg-surface-container-low border border-outline-variant mb-2 flex items-center justify-center relative overflow-hidden">
+<div class="w-10 h-16 bg-[#31353c] border-2 border-black flex flex-col items-center justify-start p-0.5">
+<div class="w-6 h-6 bg-[#869587] border border-black mb-1"></div>
+<div class="w-8 h-8 bg-[#3c4a3f] border border-black"></div>
+</div>
+<span class="absolute top-1 right-1 text-[8px] font-label-sm text-outline">#01</span>
+</div>
+<div>
+<span class="px-1.5 py-0.5 bg-surface-container-high border border-outline-variant text-[9px] font-label-sm text-outline block w-max mb-1">ARMOR</span>
+<div class="font-pixel text-sm text-on-surface">Netherite Knight</div>
+<button class="mt-2 w-full py-1 text-label-sm font-label-sm bg-surface-container-high hover:bg-primary hover:text-black border border-outline-variant text-on-surface transition-colors">
+              Edit Skin
+            </button>
+</div>
+</div>
+<!-- Skin 2: Anime Cyber -->
+<div class="bg-surface-container border-2 border-outline-variant p-3 tactile-box hover:-translate-y-1 hover:border-secondary transition-all flex flex-col justify-between group">
+<div class="w-full aspect-square bg-surface-container-low border border-outline-variant mb-2 flex items-center justify-center relative overflow-hidden">
+<div class="w-10 h-16 bg-[#181c23] border-2 border-black flex flex-col items-center justify-start p-0.5">
+<div class="w-6 h-6 bg-[#ffd98a] border border-black mb-1"></div>
+<div class="w-8 h-8 bg-[#00bcb9] border border-black"></div>
+</div>
+<span class="absolute top-1 right-1 text-[8px] font-label-sm text-secondary">#02</span>
+</div>
+<div>
+<span class="px-1.5 py-0.5 bg-surface-container-high border border-secondary/40 text-[9px] font-label-sm text-secondary block w-max mb-1">CYBER</span>
+<div class="font-pixel text-sm text-on-surface">Neo Tokyo Ninja</div>
+<button class="mt-2 w-full py-1 text-label-sm font-label-sm bg-surface-container-high hover:bg-secondary hover:text-black border border-outline-variant text-on-surface transition-colors">
+              Edit Skin
+            </button>
+</div>
+</div>
+<!-- Skin 3: Cute Frog -->
+<div class="bg-surface-container border-2 border-outline-variant p-3 tactile-box hover:-translate-y-1 hover:border-primary transition-all flex flex-col justify-between group">
+<div class="w-full aspect-square bg-surface-container-low border border-outline-variant mb-2 flex items-center justify-center relative overflow-hidden">
+<div class="w-10 h-16 bg-[#181c23] border-2 border-black flex flex-col items-center justify-start p-0.5">
+<div class="w-6 h-6 bg-[#3ddc84] border border-black mb-1"></div>
+<div class="w-8 h-8 bg-[#66fea2] border border-black"></div>
+</div>
+<span class="absolute top-1 right-1 text-[8px] font-label-sm text-primary">#03</span>
+</div>
+<div>
+<span class="px-1.5 py-0.5 bg-surface-container-high border border-primary/40 text-[9px] font-label-sm text-primary block w-max mb-1">PASTEL</span>
+<div class="font-pixel text-sm text-on-surface">Marsh Frog Hat</div>
+<button class="mt-2 w-full py-1 text-label-sm font-label-sm bg-surface-container-high hover:bg-primary hover:text-black border border-outline-variant text-on-surface transition-colors">
+              Edit Skin
+            </button>
+</div>
+</div>
+<!-- Skin 4: Robot Copper -->
+<div class="bg-surface-container border-2 border-outline-variant p-3 tactile-box hover:-translate-y-1 hover:border-tertiary transition-all flex flex-col justify-between group">
+<div class="w-full aspect-square bg-surface-container-low border border-outline-variant mb-2 flex items-center justify-center relative overflow-hidden">
+<div class="w-10 h-16 bg-[#181c23] border-2 border-black flex flex-col items-center justify-start p-0.5">
+<div class="w-6 h-6 bg-[#ecbb49] border border-black mb-1"></div>
+<div class="w-8 h-8 bg-[#5b4300] border border-black"></div>
+</div>
+<span class="absolute top-1 right-1 text-[8px] font-label-sm text-tertiary">#04</span>
+</div>
+<div>
+<span class="px-1.5 py-0.5 bg-surface-container-high border border-tertiary/40 text-[9px] font-label-sm text-tertiary block w-max mb-1">COPPER</span>
+<div class="font-pixel text-sm text-on-surface">Automaton V2</div>
+<button class="mt-2 w-full py-1 text-label-sm font-label-sm bg-surface-container-high hover:bg-tertiary hover:text-black border border-outline-variant text-on-surface transition-colors">
+              Edit Skin
+            </button>
+</div>
+</div>
+<!-- Skin 5: Streetwear Hoodie -->
+<div class="bg-surface-container border-2 border-outline-variant p-3 tactile-box hover:-translate-y-1 hover:border-outline transition-all flex flex-col justify-between group">
+<div class="w-full aspect-square bg-surface-container-low border border-outline-variant mb-2 flex items-center justify-center relative overflow-hidden">
+<div class="w-10 h-16 bg-[#181c23] border-2 border-black flex flex-col items-center justify-start p-0.5">
+<div class="w-6 h-6 bg-[#ffdf9d] border border-black mb-1"></div>
+<div class="w-8 h-8 bg-[#31353c] border border-black"></div>
+</div>
+<span class="absolute top-1 right-1 text-[8px] font-label-sm text-outline">#05</span>
+</div>
+<div>
+<span class="px-1.5 py-0.5 bg-surface-container-high border border-outline-variant text-[9px] font-label-sm text-outline block w-max mb-1">URBAN</span>
+<div class="font-pixel text-sm text-on-surface">Deepslate Hoodie</div>
+<button class="mt-2 w-full py-1 text-label-sm font-label-sm bg-surface-container-high hover:bg-primary hover:text-black border border-outline-variant text-on-surface transition-colors">
+              Edit Skin
+            </button>
+</div>
+</div>
+<!-- Skin 6: Creeper Mossy -->
+<div class="bg-surface-container border-2 border-outline-variant p-3 tactile-box hover:-translate-y-1 hover:border-primary transition-all flex flex-col justify-between group">
+<div class="w-full aspect-square bg-surface-container-low border border-outline-variant mb-2 flex items-center justify-center relative overflow-hidden">
+<div class="w-10 h-16 bg-[#181c23] border-2 border-black flex flex-col items-center justify-start p-0.5">
+<div class="w-6 h-6 bg-[#005c31] border border-black mb-1"></div>
+<div class="w-8 h-8 bg-[#3ddc84] border border-black"></div>
+</div>
+<span class="absolute top-1 right-1 text-[8px] font-label-sm text-primary">#06</span>
+</div>
+<div>
+<span class="px-1.5 py-0.5 bg-surface-container-high border border-primary/40 text-[9px] font-label-sm text-primary block w-max mb-1">MOSSY</span>
+<div class="font-pixel text-sm text-on-surface">Overgrown Mutant</div>
+<button class="mt-2 w-full py-1 text-label-sm font-label-sm bg-surface-container-high hover:bg-primary hover:text-black border border-outline-variant text-on-surface transition-colors">
+              Edit Skin
+            </button>
+</div>
+</div>
+<!-- Card 7: WIDER DIAMOND AI GENERATOR PROMPT CARD (Col-span 2 on smaller, 1 wide on desktop) -->
+<div class="col-span-2 md:col-span-3 lg:col-span-1 bg-surface-container-low border-2 border-secondary p-3 tactile-box shadow-[4px_4px_0px_#000,0_0_12px_rgba(79,227,224,0.3)] flex flex-col justify-between" id="ai-skins">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-label-sm font-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">auto_awesome</span>
+                AI GENERATOR
+              </span>
+<span class="px-1 py-0.2 text-[8px] font-label-sm bg-secondary text-black font-bold">PROMPT</span>
+</div>
+<p class="text-[11px] font-body-sm text-on-surface-variant mb-2">
+              Generate full 64x64 dual-layer skins from descriptive prompts.
+            </p>
+<!-- Prompt Input Bar -->
+<div class="relative mb-2">
+<input class="w-full bg-surface-container-lowest border-2 border-outline-variant text-on-surface text-[11px] font-body-sm px-2 py-1.5 focus:border-secondary focus:ring-0" type="text" value="a neon cyberpunk ninja with diamond visor..."/>
+</div>
+<!-- Clickable Prompt Chips -->
+<div class="flex flex-wrap gap-1 mb-2">
+<button class="text-[9px] font-label-sm px-1.5 py-0.5 bg-surface-container border border-outline-variant text-outline hover:border-secondary hover:text-secondary">
+                Cyber Samurai
+              </button>
+<button class="text-[9px] font-label-sm px-1.5 py-0.5 bg-surface-container border border-outline-variant text-outline hover:border-secondary hover:text-secondary">
+                Mushroom Explorer
+              </button>
+<button class="text-[9px] font-label-sm px-1.5 py-0.5 bg-surface-container border border-outline-variant text-outline hover:border-secondary hover:text-secondary">
+                Obsidian Golem
+              </button>
+</div>
+</div>
+<button class="w-full py-1.5 bg-secondary hover:bg-secondary-fixed text-on-secondary-fixed font-pixel text-xs font-bold border-2 border-black tactile-box-sm tactile-press-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>GENERATE SKIN</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 4: "EVERYTHING YOU CAN MAKE" (Bento Grid Architecture)           -->
+<!-- ========================================================================= -->
+<section class="py-16 border-b-2 border-outline-variant bg-surface" id="skin-packs">
+<div class="max-w-[1440px] mx-auto px-4 md:px-6">
+<div class="max-w-2xl mb-8">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 mb-2 bg-surface-container border border-outline-variant text-label-sm font-label-sm text-tertiary">
+<span class="material-symbols-outlined text-xs">extension</span>
+          UNLIMITED CREATIVE POSSIBILITIES
+        </div>
+<h2 class="font-pixel text-2xl md:text-3xl text-on-surface">
+          Everything You Can Make with MCSkinGenerator
+        </h2>
+<p class="text-on-surface-variant font-body-md text-body-md mt-1">
+          Designed for technical creators and Bedrock world-builders. Export complete multi-skin packs, harness prompt-driven neural generators, and master dual-layer voxel 3D physics.
+        </p>
+</div>
+<!-- Bento Grid (Varied heights & widths) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+<!-- TILE 1: Large Tile (Col-span 7) - Skin Pack Maker (.mcpack) -->
+<div class="md:col-span-7 bg-surface-container border-2 border-outline-variant p-6 tactile-box flex flex-col justify-between relative overflow-hidden" id="bedrock">
+<!-- Background Glow -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-tertiary-container/10 rounded-full blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-1 bg-surface-container-high border-2 border-tertiary text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+                .mcpack for Bedrock
+              </span>
+<span class="text-label-sm font-label-sm text-outline">5 SKINS PER ARCHIVE</span>
+</div>
+<h3 class="font-pixel text-xl md:text-2xl text-on-surface mb-2">
+              Minecraft Skin Pack Maker
+            </h3>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-lg mb-6">
+              Stop manually unzipping texture packs. MCSkinGenerator compiles auto-configured <code class="text-code-md text-tertiary bg-surface-container-low px-1.5 py-0.5 border border-outline-variant">manifest.json</code> and <code class="text-code-md text-tertiary bg-surface-container-low px-1.5 py-0.5 border border-outline-variant">skins.json</code> files ready for 1-click import across Windows, iOS, Android, and consoles.
+            </p>
+<!-- Card Fan Visualization of 5 custom skins stacked -->
+<div class="flex items-end justify-center gap-2 py-4 mb-4 select-none">
+<div class="w-16 h-28 bg-surface-container-lowest border-2 border-black transform -rotate-12 translate-y-2 shadow-[2px_2px_0px_#000] p-1 flex flex-col items-center justify-between">
+<span class="text-[7px] font-label-sm text-outline">SKIN 1</span>
+<div class="w-8 h-8 bg-[#FF4D4D] border border-black"></div>
+<span class="text-[8px] font-pixel text-on-surface">Warrior</span>
+</div>
+<div class="w-16 h-28 bg-surface-container-lowest border-2 border-black transform -rotate-6 translate-y-1 shadow-[2px_2px_0px_#000] p-1 flex flex-col items-center justify-between">
+<span class="text-[7px] font-label-sm text-outline">SKIN 2</span>
+<div class="w-8 h-8 bg-[#4FE3E0] border border-black"></div>
+<span class="text-[8px] font-pixel text-on-surface">Sorcerer</span>
+</div>
+<div class="w-20 h-32 bg-surface-container-high border-2 border-tertiary z-10 shadow-[4px_4px_0px_#000] p-1 flex flex-col items-center justify-between">
+<span class="text-[8px] font-label-sm text-tertiary font-bold">HERO SKIN</span>
+<div class="w-10 h-10 bg-[#3DDC84] border-2 border-black"></div>
+<span class="text-[9px] font-pixel text-tertiary font-bold">King Steve</span>
+</div>
+<div class="w-16 h-28 bg-surface-container-lowest border-2 border-black transform rotate-6 translate-y-1 shadow-[2px_2px_0px_#000] p-1 flex flex-col items-center justify-between">
+<span class="text-[7px] font-label-sm text-outline">SKIN 4</span>
+<div class="w-8 h-8 bg-[#FF9F43] border border-black"></div>
+<span class="text-[8px] font-pixel text-on-surface">Ranger</span>
+</div>
+<div class="w-16 h-28 bg-surface-container-lowest border-2 border-black transform rotate-12 translate-y-2 shadow-[2px_2px_0px_#000] p-1 flex flex-col items-center justify-between">
+<span class="text-[7px] font-label-sm text-outline">SKIN 5</span>
+<div class="w-8 h-8 bg-[#5a3382] border border-black"></div>
+<span class="text-[8px] font-pixel text-on-surface">Cleric</span>
+</div>
+</div>
+</div>
+<!-- Feature Bullets -->
+<div class="grid grid-cols-2 gap-3 pt-4 border-t-2 border-outline-variant text-label-sm font-label-sm">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-base">check_box</span>
+<span>UUID V4 Cryptographic Manifest</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-base">check_box</span>
+<span>Custom Skin Names &amp; Geometries</span>
+</div>
+</div>
+</div>
+<!-- TILE 2: Medium Tile (Col-span 5) - AI Minecraft Skin Maker -->
+<div class="md:col-span-5 bg-surface-container border-2 border-secondary p-6 tactile-box flex flex-col justify-between relative shadow-[4px_4px_0px_#000,0_0_16px_rgba(68,219,216,0.15)]">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 bg-surface-container-low border border-secondary text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">neurology</span>
+                NEURAL VOXEL MODEL
+              </span>
+<span class="px-1.5 py-0.5 bg-secondary text-black text-[9px] font-label-sm font-bold">99.4% CONFIDENCE</span>
+</div>
+<h3 class="font-pixel text-xl text-on-surface mb-2">
+              AI Minecraft Skin Maker
+            </h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
+              Describe armor, colorways, or themes in plain language. Our neural pipeline interprets geometry folds and renders sharp pixel-art coordinates without fuzzy blurred edges.
+            </p>
+<!-- Neural Prompt & Unwrapped Result Demo -->
+<div class="bg-surface-container-lowest border-2 border-outline-variant p-3 mb-4">
+<div class="text-[10px] font-label-sm text-outline mb-1">PROMPT SIMULATION:</div>
+<div class="text-code-md font-code-md text-secondary mb-3">"Glowstone diving suit with heavy brass helmet"</div>
+<div class="flex items-center gap-3">
+<div class="w-16 h-16 pixel-checker border border-secondary p-1 flex items-center justify-center">
+<div class="w-12 h-12 bg-gradient-to-br from-tertiary to-secondary border border-black"></div>
+</div>
+<div class="text-label-sm font-label-sm text-outline space-y-1">
+<div>Status: <span class="text-primary font-bold">Generated in 1.4s</span></div>
+<div>Palette: <span class="text-on-surface">Brass / Glowstone / Glass</span></div>
+<div>UV Symmetry: <span class="text-secondary">Enforced</span></div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 bg-secondary hover:bg-secondary-fixed text-on-secondary-fixed font-pixel text-sm font-bold border-2 border-black tactile-box-sm tactile-press-sm">
+            Launch Neural Prompt Studio
+          </button>
+</div>
+<!-- TILE 3: Medium Tile (Col-span 5) - Dual Layers Breakdown -->
+<div class="md:col-span-5 bg-surface-container border-2 border-outline-variant p-6 tactile-box flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="px-2 py-0.5 bg-surface-container-high border border-outline-variant text-label-sm font-label-sm text-primary">
+                3D VOXEL PHYSIQUE
+              </span>
+<span class="text-label-sm font-label-sm text-outline">ALPHA TRANSPARENCY</span>
+</div>
+<h3 class="font-pixel text-xl text-on-surface mb-2">
+              Dual-Layer Anatomy Breakdown
+            </h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
+              Full control over base skin layers and 3D outer overlays. Create floating headphones, flowing capes, open jackets, and transparent visor shields.
+            </p>
+<!-- Visual Dual Layer Exploded Schematic -->
+<div class="p-3 bg-surface-container-lowest border border-outline-variant flex items-center justify-around text-center mb-3">
+<div>
+<div class="w-12 h-12 bg-[#2E343D] border-2 border-black mx-auto mb-1 flex items-center justify-center text-[10px] text-outline font-pixel">
+                  SOLID
+                </div>
+<span class="text-[10px] font-label-sm text-on-surface block">Base Layer</span>
+<span class="text-[9px] font-label-sm text-outline block">100% Opaque</span>
+</div>
+<div class="text-secondary font-bold text-lg">+</div>
+<div>
+<div class="w-12 h-12 bg-secondary/20 border-2 border-dashed border-secondary mx-auto mb-1 flex items-center justify-center text-[10px] text-secondary font-pixel shadow-[0_0_8px_rgba(68,219,216,0.3)]">
+                  OUTER
+                </div>
+<span class="text-[10px] font-label-sm text-secondary block">3D Overlay</span>
+<span class="text-[9px] font-label-sm text-outline block">Alpha Channels</span>
+</div>
+<div class="text-primary font-bold text-lg">=</div>
+<div>
+<div class="w-12 h-12 bg-[#3DDC84]/30 border-2 border-primary mx-auto mb-1 flex items-center justify-center text-[10px] text-primary font-pixel shadow-[2px_2px_0px_#000]">
+                  3D SKIN
+                </div>
+<span class="text-[10px] font-label-sm text-primary block">Final Rig</span>
+<span class="text-[9px] font-label-sm text-outline block">In-Game Depth</span>
+</div>
+</div>
+</div>
+<div class="text-label-sm font-label-sm text-outline flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-primary">visibility</span>
+<span>Toggle each body part overlay with 1-click in the editor dock</span>
+</div>
+</div>
+<!-- TILE 4: Small Tile (Col-span 4) - 4-Step Bedrock Import Guide -->
+<div class="md:col-span-4 bg-surface-container border-2 border-outline-variant p-6 tactile-box flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-sm font-label-sm text-outline uppercase font-bold">BEDROCK WORKFLOW</span>
+<span class="material-symbols-outlined text-tertiary">devices</span>
+</div>
+<h3 class="font-pixel text-lg text-on-surface mb-3">
+              Minecraft Bedrock Skin Maker
+            </h3>
+<ol class="space-y-2 text-label-sm font-label-sm">
+<li class="flex items-start gap-2 text-on-surface">
+<span class="w-4 h-4 bg-surface-container-high border border-outline-variant text-center leading-none text-primary font-bold flex items-center justify-center">1</span>
+<span>Craft your avatar in the online editor</span>
+</li>
+<li class="flex items-start gap-2 text-on-surface">
+<span class="w-4 h-4 bg-surface-container-high border border-outline-variant text-center leading-none text-primary font-bold flex items-center justify-center">2</span>
+<span>Export directly as a consolidated <code class="text-tertiary">.mcpack</code></span>
+</li>
+<li class="flex items-start gap-2 text-on-surface">
+<span class="w-4 h-4 bg-surface-container-high border border-outline-variant text-center leading-none text-primary font-bold flex items-center justify-center">3</span>
+<span>Double click file to trigger Minecraft import</span>
+</li>
+<li class="flex items-start gap-2 text-on-surface">
+<span class="w-4 h-4 bg-surface-container-high border border-outline-variant text-center leading-none text-primary font-bold flex items-center justify-center">4</span>
+<span>Equip under Dressing Room &gt; Classic Skins</span>
+</li>
+</ol>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant text-[10px] font-label-sm text-outline">
+            Compatible with Windows 10/11, iPad, Xbox, Switch &amp; Mobile
+          </div>
+</div>
+<!-- TILE 5: Small Tile (Col-span 3) - 100% Free Guarantee Stamp -->
+<div class="md:col-span-3 bg-surface-container-low border-2 border-primary p-6 tactile-box flex flex-col justify-between shadow-[4px_4px_0px_#000,0_0_12px_rgba(61,220,132,0.15)]">
+<div>
+<div class="w-8 h-8 bg-primary/20 border-2 border-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+</div>
+<h3 class="font-pixel text-lg text-on-surface mb-2">
+              100% Free Minecraft Skin Maker
+            </h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4">
+              We never compress your pixels, hide downloads behind paywalls, or inject branding watermarks into your skins.
+            </p>
+<div class="bg-surface-container-lowest border border-outline-variant p-2 text-center">
+<div class="font-pixel text-xs text-primary tracking-wider uppercase">NO SIGN-UP REQUIRED</div>
+<div class="text-[10px] font-label-sm text-outline mt-0.5">LOSSLESS 64×64 PNG ARCHIVE</div>
+</div>
+</div>
+<div class="mt-3 text-center">
+<span class="text-[9px] font-label-sm text-tertiary">OPEN ARCHIVE · ZERO COOKIE TRACKING</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 5: "HOW IT WORKS" (Step-by-step Tactile Cards)                    -->
+<!-- ========================================================================= -->
+<section class="py-16 border-b-2 border-outline-variant bg-surface-container-lowest">
+<div class="max-w-[1440px] mx-auto px-4 md:px-6">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<span class="text-label-sm font-label-sm text-primary tracking-widest uppercase">EASY CRAFTING LOOP</span>
+<h2 class="font-pixel text-2xl md:text-3xl text-on-surface mt-1">
+          How to Make Your Skin in 3 Steps
+        </h2>
+<p class="text-on-surface-variant font-body-md text-body-md mt-2">
+          From first pixel to custom multiplayer server, design effortlessly within your browser.
+        </p>
+</div>
+<!-- 3 Horizontal Sequence Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+<!-- Step 1 -->
+<div class="bg-surface-container border-2 border-outline-variant p-6 tactile-box flex flex-col justify-between group hover:border-primary transition-colors">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-pixel text-3xl text-primary drop-shadow-[2px_2px_0px_#000]">01</span>
+<div class="w-9 h-9 bg-surface-container-lowest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg">draw</span>
+</div>
+</div>
+<h3 class="font-pixel text-lg text-on-surface mb-2">Draw or Pick a Template</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">
+              Start with Steve, Alex, or an archetype from our library. Use the precision pixel pencil, bucket flood-fill, and automatic horizontal mirror to build symmetrical designs in seconds.
+            </p>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant text-label-sm font-label-sm text-outline">
+            Feature: Color Shading &amp; Hex Eyedropper
+          </div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container border-2 border-outline-variant p-6 tactile-box flex flex-col justify-between group hover:border-secondary transition-colors">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-pixel text-3xl text-secondary drop-shadow-[2px_2px_0px_#000]">02</span>
+<div class="w-9 h-9 bg-surface-container-lowest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-lg">view_in_ar</span>
+</div>
+</div>
+<h3 class="font-pixel text-lg text-on-surface mb-2">Inspect in Real-Time 3D</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">
+              Drag to orbit 360 degrees, inspect walking and running animations, and independently toggle the outer jacket, cape, and armor layers to guarantee your depth feels right.
+            </p>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant text-label-sm font-label-sm text-secondary">
+            Feature: 3px Slim vs 4px Classic Switch
+          </div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container border-2 border-outline-variant p-6 tactile-box flex flex-col justify-between group hover:border-tertiary transition-colors">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-pixel text-3xl text-tertiary drop-shadow-[2px_2px_0px_#000]">03</span>
+<div class="w-9 h-9 bg-surface-container-lowest border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-lg">file_download</span>
+</div>
+</div>
+<h3 class="font-pixel text-lg text-on-surface mb-2">Download &amp; Play Anywhere</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">
+              One click provides a raw lossless 64x64 PNG for Minecraft Java Edition, or an automated <code class="text-tertiary">.mcpack</code> installer for Bedrock on PC, tablet, or consoles.
+            </p>
+</div>
+<div class="mt-6 pt-3 border-t border-outline-variant text-label-sm font-label-sm text-outline">
+            Zero Watermarks · Lossless Alpha
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION 6: FAQ ACCORDION (Max-W-3XL Center-Aligned)                      -->
+<!-- ========================================================================= -->
+<section class="py-16 border-b-2 border-outline-variant bg-surface">
+<div class="max-w-3xl mx-auto px-4 md:px-6">
+<div class="text-center mb-8">
+<span class="text-label-sm font-label-sm text-tertiary tracking-wider uppercase">HELP &amp; TECHNICAL GUIDE</span>
+<h2 class="font-pixel text-2xl md:text-3xl text-on-surface mt-1">
+          Frequently Asked Questions
+        </h2>
+<p class="text-on-surface-variant font-body-md text-body-md mt-1">
+          Everything you need to know about skin formats, layer rendering, and console compatibility.
+        </p>
+</div>
+<!-- Accordion Stack -->
+<div class="space-y-3">
+<!-- FAQ 1 -->
+<details class="group bg-surface-container border-2 border-outline-variant tactile-box-sm open:border-primary transition-colors">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none font-pixel text-base text-on-surface group-hover:text-primary">
+<span>1. How do I apply the downloaded skin in Minecraft Java Edition?</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/60">
+            Open the official Minecraft Launcher, navigate to the <strong>Skins</strong> tab at the top, and click <strong>New Skin</strong>. Click "Browse" under Skin File and select the 64x64 PNG downloaded from MCSkinGenerator. Choose between the Classic (4px) or Slim (3px) model based on what you designed, then click <strong>Save &amp; Use</strong>.
+          </div>
+</details>
+<!-- FAQ 2 -->
+<details class="group bg-surface-container border-2 border-outline-variant tactile-box-sm open:border-primary transition-colors">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none font-pixel text-base text-on-surface group-hover:text-primary">
+<span>2. Can I use these skins on Minecraft Bedrock (Windows, Console, Mobile)?</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/60">
+            Yes! On Bedrock Edition, head to <strong>Dressing Room &gt; Classic Skins &gt; Owned Skins &gt; Choose New Skin</strong> and pick the exported PNG. Alternatively, use our <strong>Skin Pack Maker (.mcpack)</strong> to bundle up to 5 skins with a custom manifest and double-click to install directly into the game on Windows, iOS, and Android.
+          </div>
+</details>
+<!-- FAQ 3 -->
+<details class="group bg-surface-container border-2 border-outline-variant tactile-box-sm open:border-primary transition-colors">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none font-pixel text-base text-on-surface group-hover:text-primary">
+<span>3. What is the difference between Classic (4px) and Slim (3px) skins?</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/60">
+            Classic skins (the Steve model) have arms that are 4 pixels wide, giving a bulkier, traditional appearance. Slim skins (the Alex model) have 3-pixel-wide arms. If you apply a 4px skin to a 3px model, the game stretches or cuts off pixels on the underside of the arms, which is why our editor lets you switch geometries before drawing.
+          </div>
+</details>
+<!-- FAQ 4 -->
+<details class="group bg-surface-container border-2 border-outline-variant tactile-box-sm open:border-primary transition-colors">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none font-pixel text-base text-on-surface group-hover:text-primary">
+<span>4. How does the outer layer (armor / jacket / hat) work?</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/60">
+            Since Minecraft 1.8, all skins support dual layers. The base layer is 100% opaque and represents the player's core body. The outer overlay floats 0.5 pixels above the base layer and supports alpha transparency, allowing you to design protruding goggles, cuffs, hoods, belts, and layered armor that adds true 3D depth in-game.
+          </div>
+</details>
+<!-- FAQ 5 -->
+<details class="group bg-surface-container border-2 border-outline-variant tactile-box-sm open:border-primary transition-colors">
+<summary class="flex items-center justify-between p-4 cursor-pointer select-none font-pixel text-base text-on-surface group-hover:text-primary">
+<span>5. Is MCSkinGenerator completely free to use without an account?</span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-1 text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/60">
+            Yes, MCSkinGenerator is 100% free with no sign-up, subscriptions, or intrusive watermarks. Your skins are generated and edited locally inside your browser cache, meaning your privacy is respected and downloads are instantaneous.
+          </div>
+</details>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SHARED COMPONENT 2: Footer                                                -->
+<!-- ========================================================================= -->
+<footer class="w-full border-t-2 border-on-surface dark:border-outline-variant bg-surface-container dark:bg-inverse-surface">
+<div class="w-full py-8 px-4 md:px-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Brand & Product Description -->
+<div class="flex flex-col items-center md:items-start gap-1">
+<div class="font-display-xl text-headline-sm text-on-surface dark:text-inverse-on-surface flex items-center gap-2">
+<div class="w-5 h-5 bg-surface-container-high border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">view_in_ar</span>
+</div>
+<span class="font-pixel text-headline-sm">MCSkinGenerator</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline text-center md:text-left max-w-md">
+          © 2025 MCSkinGenerator. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.
+        </p>
+</div>
+<!-- Navigation & Document Links -->
+<nav class="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-label-sm font-label-sm">
+<a class="text-primary dark:text-primary-fixed font-bold hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-100" href="#editor">
+          Editor
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-100" href="#skin-packs">
+          Skin Packs
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-100" href="#ai-skins">
+          AI Skins
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-100" href="#bedrock">
+          Bedrock Documentation
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-100" href="#templates">
+          Templates
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-100" href="#">
+          Terms of Service
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-100" href="#">
+          Privacy Policy
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-100" href="#">
+          Discord Community
+        </a>
+<a class="text-on-surface-variant dark:text-outline hover:text-on-surface dark:hover:text-inverse-on-surface hover:text-primary dark:hover:text-primary-fixed underline transition-colors duration-100" href="#">
+          Contact Support
+        </a>
+</nav>
+</div>
+</footer>
+<!-- ========================================================================= -->
+<!-- LIGHTWEIGHT INLINE INTERACTION LOGIC (Voxel Workshop Feedback)            -->
+<!-- ========================================================================= -->
+<script>
+    // Simple tactile feedback for editor tools
+    document.querySelectorAll('#editor button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        // If it's in the left tool matrix, toggle visual highlight
+        if (this.closest('.lg\\:col-span-2')) {
+          const siblings = this.parentElement.querySelectorAll('button');
+          siblings.forEach(b => {
+            b.classList.remove('bg-surface-container-highest', 'border-primary', 'text-primary', 'tactile-box-sm');
+            b.classList.add('bg-surface-container', 'border-outline-variant', 'text-on-surface');
+          });
+          this.classList.remove('bg-surface-container', 'border-outline-variant', 'text-on-surface');
+          this.classList.add('bg-surface-container-highest', 'border-primary', 'text-primary', 'tactile-box-sm');
+        }
+      });
+    });
+
+    // Swatch color selection simulator
+    document.querySelectorAll('.aspect-square[title]').forEach(swatch => {
+      swatch.addEventListener('click', function() {
+        const bg = window.getComputedStyle(this).backgroundColor;
+        const toneChip = document.querySelector('#editor .bg-\\[\\#3DDC84\\]');
+        if (toneChip) toneChip.style.backgroundColor = bg;
+      });
+    });
+  </script>
+</body></html>

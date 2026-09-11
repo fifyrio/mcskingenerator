@@ -1,0 +1,412 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\"projectId\":\"3372204810367895523\",\"sessionId\":\"15571423525090213387\",\"outputComponents\":[{\"design\":{\"screens\":[{\"screenshot\":{\"name\":\"projects/3372204810367895523/files/ac71514e01e14055a1f4a89023cadd24\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AEtjO1UPyMuRCrgYVQ4-JckZr0q9FgnUs_C-FQE-6-D0rR4uPhmALseaPH5edindyPyl-bZMTNdySLRleXE6jONUBLjsKzSY6cMakBxIG0GSBeDvAJwPFm9PsyEku9t0PPrFiKmx-uDH0GmXhNre9Baox0btFyGDlsiyyDzjuCxn1gEB6F6n4k6kAnPEtkLjX-icprQcn0DNKx_lF7CRxpCesapGVBdXpYwq3iCKkJjkuAPNRRrvTN_BCuEto4A\"},\"htmlCode\":{\"name\":\"projects/3372204810367895523/files/0e8d9faad2f14029bd85543c436472c3\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2U3M2EyMDljNjBhNzQwNmJiNDkxZDMxZTRmZTQ5ZmQ0EgsSBxCQ-Y3uzAgYAZIBIwoKcHJvamVjdF9pZBIVQhMzMzcyMjA0ODEwMzY3ODk1NTIz&filename=&opi=96797242\",\"mimeType\":\"text/html\"},\"id\":\"84c0ec4cb3154024a4f07ffea933014a\",\"generatedBy\":\"HatterAgent\",\"width\":\"2560\",\"height\":\"6570\",\"title\":\"MCSkinGenerator - Refined Workbench\",\"prompt\":\"Refine this Minecraft Skin Maker homepage with the following exact changes while KEEPING the hero editor (toolbox, UV canvas, 3D viewport, Classic/Slim switch, layer toggles, Download Skin button, Export .mcpack) and the overall Voxel Workbench light aesthetic:\\n\\n1. Header:\\n- Remove the \\\"Download PNG\\\" button, \\\"Ctrl+O\\\" hint, and \\\"v2.4\\\" badge.\\n- Right side keeps only the \\\"Import PNG\\\" ghost button.\\n- Navigation links remain: Editor, Skin Packs, AI Skins, Bedrock, Templates.\\n\\n2. Hero text readability:\\n- Place the status pill (\\\"Ready • 64×64 UV HD Canvas | Java & Bedrock Compatible\\\"), the H1 (\\\"Minecraft Skin Maker - Create Your Own Skin Online\\\"), and the lead paragraph inside a solid Stone Paper (#F4F1EA) block with no dot-grid pattern behind the text.\\n- Lead text: font-size 18px, color #3A3D42, max 2 lines: \\\"The free skin maker for Minecraft: draw pixel by pixel, preview in 3D, and download a PNG for Java & Bedrock.\\\"\\n\\n3. Quick Starters section:\\n- Left two-thirds (2/3 width) = 3x2 grid of SIX template cards. Each card has a small front-facing pixel skin preview, a style tag badge, a name, and an \\\"Edit template\\\" button:\\n  1. Knight (tag: ARMOR)\\n  2. Anime Hero (tag: ANIME)\\n  3. Cute Bunny (tag: CUTE)\\n  4. Robot (tag: ROBOT)\\n  5. Street Hoodie (tag: HOODIE)\\n  6. Creeper Style (tag: MOB)\\n- Right one-third (1/3 width) = tall Diamond Teal (#1FB5AC) outlined AI card:\\n  - Title: \\\"Generate a skin with AI\\\"\\n  - Text input with placeholder: \\\"a neon cyberpunk ninja…\\\"\\n  - Three prompt chips: \\\"Samurai golem\\\", \\\"Mushroom maiden\\\", \\\"Copper robot\\\"\\n  - Teal button: \\\"Generate skin\\\"\\n- Top-right section link: \\\"Browse all templates →\\\"\\n- Remove \\\"10,000+ Community Skins\\\", \\\"GPT-Skin v4\\\", and \\\"AI Neural Engine\\\" labels.\\n\\n4. Capabilities Bento:\\n- Section heading stays: \\\"02 // CAPABILITIES Everything you can craft with MCSkinGenerator\\\".\\n- Bento tiles must have exactly these five tile titles styled as the most prominent text in each tile:\\n  1. LARGE tile (spans 2 columns): Title: \\\"Minecraft Skin Pack Maker\\\"\\n     - Visual: a fanned stack of 5 colorful pixel skin cards (Warrior, Ranger, King, Mage, Rogue) with the middle one raised.\\n     - Badge: \\\".mcpack for Bedrock\\\"\\n     - Text: \\\"Bundle several skins into one pack with an auto-generated manifest, then import it into Minecraft Bedrock in one tap.\\\"\\n     - Link: \\\"Make a skin pack →\\\"\\n  2. MEDIUM tile (teal accent): Title: \\\"AI Minecraft Skin Maker\\\"\\n     - Visual: prompt example \\\"cyber frog with diamond armor\\\" next to a small generated pixel skin.\\n     - Text: \\\"Describe it or upload a photo — get a real 64×64 skin file, not just a picture.\\\"\\n     - Link: \\\"Try AI skins →\\\"\\n  3. MEDIUM tile: Title: \\\"Custom Minecraft Skin Maker\\\"\\n     - Visual: diagram/illustration of base layer + outer layer = final skin.\\n     - Text: \\\"Layers, mirror drawing, palettes and templates for full control over every pixel.\\\"\\n     - Link: \\\"Open the editor →\\\"\\n  4. SMALL tile: Title: \\\"Minecraft Bedrock Skin Maker\\\"\\n     - Content: Numbered steps:\\n       1 Design or pick a skin\\n       2 Download the PNG\\n       3 Open Dressing Room → Classic Skins\\n       4 Import and choose your file\\n     - Fine print: \\\"Windows, iOS & Android. Consoles can't import custom PNGs.\\\"\\n     - Link: \\\"Bedrock guide →\\\"\\n  5. SMALL tile: Title: \\\"Free Minecraft Skin Maker\\\"\\n     - Stamp / badge: \\\"No sign-up · No watermark\\\"\\n     - Text: \\\"The editor, templates and PNG downloads are free forever. AI generations include a daily free quota.\\\"\\n     - Link: \\\"Why it's free →\\\"\\n- Remove \\\"Zero Jailbreak\\\", \\\"Works on iPad, Mobile, Switch & PC\\\", \\\"128×128 HD UV Ready\\\", \\\"98% Match\\\", and any invented statistics.\\n\\n5. How it works:\\n- Step 01 text becomes: \\\"Start from a blank canvas, a template, or your existing skin PNG. Mirror drawing keeps both sides symmetrical.\\\"\\n- Remove the \\\"10,000 community templates\\\" claim.\\n\\n6. FAQ:\\n- Keep the five questions.\\n- Update the Bedrock question answer to: \\\"Yes on Windows, iOS and Android via Dressing Room → Classic Skins → Import. Consoles don't support importing custom PNG skins.\\\"\\n\\n7. Footer:\\n- Remove \\\"Discord Community\\\" link.\\n- Update copyright year to 2026: \\\"© 2026 MCSkinGenerator. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.\\\"\\n- Keep Mojang / Microsoft disclaimer.\",\"name\":\"projects/3372204810367895523/screens/84c0ec4cb3154024a4f07ffea933014a\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"SPACE_GROTESK\",\"customColor\":\"#3e8e2a\",\"headlineFont\":\"SPACE_GROTESK\",\"bodyFont\":\"MANROPE\",\"labelFont\":\"MANROPE\",\"namedColors\":{\"on_tertiary_fixed_variant\":\"#910a0b\",\"surface_bright\":\"#fbf8fe\",\"on_primary_container\":\"#f8ffef\",\"on_surface_variant\":\"#40493b\",\"secondary_fixed_dim\":\"#56dad0\",\"outline_variant\":\"#c0cab7\",\"on_surface\":\"#1b1b1f\",\"error_container\":\"#ffdad6\",\"on_error_container\":\"#93000a\",\"surface_container\":\"#f0edf2\",\"inverse_primary\":\"#86db6c\",\"inverse_surface\":\"#303034\",\"tertiary_fixed_dim\":\"#ffb4aa\",\"surface_container_highest\":\"#e4e1e7\",\"on_secondary\":\"#ffffff\",\"on_secondary_fixed\":\"#00201e\",\"tertiary_container\":\"#d33f34\",\"surface_variant\":\"#e4e1e7\",\"tertiary_fixed\":\"#ffdad5\",\"inverse_on_surface\":\"#f3f0f5\",\"surface\":\"#fbf8fe\",\"on_background\":\"#1b1b1f\",\"secondary\":\"#006a64\",\"surface_container_lowest\":\"#ffffff\",\"on_primary_fixed_variant\":\"#0d5300\",\"surface_container_low\":\"#f6f2f8\",\"tertiary\":\"#b0251e\",\"background\":\"#fbf8fe\",\"surface_tint\":\"#1b6d07\",\"primary_fixed\":\"#a1f885\",\"on_error\":\"#ffffff\",\"on_secondary_container\":\"#00716b\",\"on_tertiary\":\"#ffffff\",\"primary_container\":\"#358522\",\"outline\":\"#707a6a\",\"surface_container_high\":\"#eae7ed\",\"primary_fixed_dim\":\"#86db6c\",\"primary\":\"#186b04\",\"on_tertiary_fixed\":\"#410001\",\"on_primary\":\"#ffffff\",\"error\":\"#ba1a1a\",\"secondary_container\":\"#76f7ed\",\"on_primary_fixed\":\"#022100\",\"on_secondary_fixed_variant\":\"#00504b\",\"surface_dim\":\"#dcd9de\",\"secondary_fixed\":\"#76f7ed\",\"on_tertiary_container\":\"#fffbff\"},\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#3e8e2a\",\"overrideSecondaryColor\":\"#1fb5ac\",\"overrideTertiaryColor\":\"#c8372d\",\"overrideNeutralColor\":\"#1b1b1f\",\"spacingScale\":2,\"typography\":{\"display-xl-mobile\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"32px\",\"fontWeight\":\"700\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.02em\"},\"code-mono\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"13px\",\"fontWeight\":\"500\",\"lineHeight\":\"18px\",\"letterSpacing\":\"0.02em\"},\"body-md\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"14px\",\"fontWeight\":\"500\",\"lineHeight\":\"20px\"},\"label-lg\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"14px\",\"fontWeight\":\"700\",\"lineHeight\":\"20px\",\"letterSpacing\":\"0.02em\"},\"headline-lg\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"32px\",\"fontWeight\":\"700\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.02em\"},\"display-xl\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"56px\",\"letterSpacing\":\"-0.03em\"},\"body-lg\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"16px\",\"fontWeight\":\"500\",\"lineHeight\":\"24px\"},\"headline-lg-mobile\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"24px\",\"fontWeight\":\"700\",\"lineHeight\":\"32px\",\"letterSpacing\":\"-0.01em\"},\"label-md\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"12px\",\"fontWeight\":\"700\",\"lineHeight\":\"16px\",\"letterSpacing\":\"0.04em\"},\"label-sm\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"10px\",\"fontWeight\":\"800\",\"lineHeight\":\"14px\",\"letterSpacing\":\"0.06em\"},\"headline-sm\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"18px\",\"fontWeight\":\"600\",\"lineHeight\":\"24px\",\"letterSpacing\":\"0em\"},\"headline-md\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"22px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\",\"letterSpacing\":\"-0.01em\"},\"body-sm\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"12px\",\"fontWeight\":\"500\",\"lineHeight\":\"16px\"}},\"spacing\":{\"unit-xl\":\"32px\",\"gutter-desktop\":\"16px\",\"unit-2xs\":\"2px\",\"margin-desktop\":\"24px\",\"unit-md\":\"12px\",\"unit-3xl\":\"64px\",\"unit-xs\":\"4px\",\"unit-base\":\"16px\",\"unit-2xl\":\"48px\",\"unit-lg\":\"24px\",\"unit-sm\":\"8px\",\"sidebar-width\":\"320px\",\"toolbar-width\":\"56px\"},\"headlineFontFamily\":\"Space Grotesk\",\"bodyFontFamily\":\"Manrope\",\"labelFontFamily\":\"Manrope\"},\"deviceType\":\"DESKTOP\",\"screenType\":\"DESIGN\",\"screenMetadata\":{\"agentType\":\"PRO_AGENT\",\"status\":\"COMPLETE\"},\"designSystem\":{\"name\":\"assets/5100427071b3427a955ddc2f296533e0\",\"designSystem\":{\"displayName\":\"Voxel Workbench\",\"styleGuidelines\":\"## Brand & Style\\n\\nThis design system channels a tactile, maker's workbench aesthetic tailored for a high-precision, browser-based skin editor. It merges the deliberate modularity of classic voxel crafting environments with the discipline of modern industrial design tools. The visual environment evokes the feeling of physical drafting paper, machined stamping tools, and mechanical switches.\\n\\nThe design movement combines **Neo-Brutalist precision** with **Tactile Utility**:\\n- Raw, high-contrast ink boundaries (solid 2px stroke weight) defining mechanical zones.\\n- Flat hard-drop directional shadows without blur, simulating physical stamp-cut cards and buttons.\\n- A functional dichotomy between display voxel typography and surgical modern geometric sans for controls and data readouts.\\n- A restrained physical canvas that recedes, allowing the user's custom skin creation to be the vibrant focal point.\\n\\n## Layout & Spacing\\n\\nThe layout is built around a **Tool-First Desktop Layout** architecture with fixed workbench docks flanking a fluid central 3D viewport canvas.\\n\\n### Layout Model\\n- **Desktop (1280px and above)**: Full-viewport application frame (`100vh`) pinned with zero page scroll.\\n  - **Tool Ribbon**: 56px fixed left dock housing single-click drawing implements.\\n  - **Stage / Central Canvas**: Fluid workspace displaying the 3D model with an embedded bottom floating status HUD.\\n  - **Inspector Sidebar**: 320px fixed right dock housing color pickers, layer stacks, and AI generative inputs.\\n  - **Header Ribbon**: 48px fixed top bar containing file operations, undo/redo stacks, and export triggers.\\n- **Tablet (768px - 1279px)**: Inspector collapses into a slide-out drawer anchored to the right edge with a tabbed trigger handle.\\n- **Mobile (\\u003c 768px)**: Reflows into a portrait orientation with the 3D viewport taking the top 50vh, and modular bottom sheets toggling between Tools, Layers, and AI generation.\\n\\n### Spacing Rules\\n- Built on a strict 4px/8px modular base. \\n- Internal panel paddings: 12px or 16px to ensure high density without visual crowding.\\n- Tool grids: 40x40px square hit targets spaced 4px apart inside the 56px ribbon.\\n\\n## Elevation & Depth\\n\\nThis system intentionally rejects soft blur gradients and ambient lighting models. Depth is established strictly through **tactile mechanical offset shadows** and solid ink containment:\\n\\n- **Surface Rest**: All panels, cards, and modal dialogs carry a crisp `2px solid #1B1B1F` border and an unblurred, hard drop shadow: `4px 4px 0px #1B1B1F`.\\n- **Raised Interactive Elements (Buttons, Swatches, Floating Bars)**:\\n  - Default: `border: 2px solid #1B1B1F; box-shadow: 4px 4px 0px #1B1B1F; transform: translate(0, 0);`\\n  - Hover: `box-shadow: 5px 5px 0px #1B1B1F; transform: translate(-1px, -1px);`\\n  - Pressed / Active: `box-shadow: 0px 0px 0px #1B1B1F; transform: translate(4px, 4px);`\\n- **Recessed Inset Canvas / Wells (Viewport, Input boxes, Color wells)**:\\n  - Rendered with an inward border `border: 2px solid #1B1B1F` and a hard inset shadow `box-shadow: inset 2px 2px 0px rgba(27, 27, 31, 0.15);` to signal a physical cut-out inside the chalk panel.\\n- **Modal Dialogs & Overlays**:\\n  - Backdrop: `#1B1B1F` at 40% opacity with no blur filter.\\n  - Modal Box: `border: 3px solid #1B1B1F; box-shadow: 8px 8px 0px #1B1B1F;`.\\n\\n## Components\\n\\n### Buttons\\n- **Primary (Grass Green)**: Background `#3E8E2A`, text `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`. On press: translate `(4px, 4px)`, shadow disappears.\\n- **AI Feature (Diamond Teal)**: Background `#1FB5AC`, text `#1B1B1F` (bold high-contrast), border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`. Includes a square geometric spark icon.\\n- **Destructive (Redstone Red)**: Background `#C8372D`, text `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`.\\n- **Ghost / Tool Button**: Background `#FFFFFF`, text `#1B1B1F`, border `2px solid #1B1B1F`, shadow `2px 2px 0px #1B1B1F`. When selected/active: Background `#1B1B1F`, text `#FFFFFF`, shadow `0 0 0`.\\n\\n### Tool Palette Swatches & Tiles\\n- **Tool Slot**: 40x40px square, `2px solid #1B1B1F`, background `#FFFFFF`. Active tool features an inverted state (`#1B1B1F` background with `#FFFFFF` icon).\\n- **Color Swatch**: Square preview tile with internal grid lines for alpha transparency. Pinned active colors feature a miniature `4px` square corner flag in `#1B1B1F`.\\n\\n### Input Fields & Controls\\n- **Text & Numeric Inputs**: Background `#FFFFFF`, border `2px solid #1B1B1F`, padding `8px 12px`. Focus state shifts the background to `#F4F1EA` with an accent outline offset of `2px solid #3E8E2A`.\\n- **Steppers & Sliders**: Sliders feature a flat square thumb (`16x16px`, `#3E8E2A` fill, `2px solid #1B1B1F`) moving along an unrounded track with a `2px solid #1B1B1F` perimeter and `#FFFFFF` background.\\n\\n### Layer Stack & Tree Items\\n- **Layer Item**: Fixed height (36px), border `2px solid #1B1B1F`, background `#FFFFFF`, bottom margin `4px`.\\n- **Active Layer**: Left edge features a `6px` solid vertical accent bar in Dirt Brown (`#8A5A36`).\\n- **Visibility Toggle**: Square eye icon button with binary states (Filled `#1B1B1F` for visible; 45-degree slash for hidden).\\n\\n### Cards & Workbenches\\n- **Workbench Card**: Base background `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`.\\n- **Card Header**: Demarcated by a solid horizontal `2px solid #1B1B1F` rule, background `#F4F1EA`, padding `8px 12px`, with labels in uppercase `label-md` tracking.\\n\\n### Checkboxes & Segmented Controls\\n- **Checkbox**: `18x18px` square, border `2px solid #1B1B1F`, background `#FFFFFF`. Checked state: solid fill with `#3E8E2A` containing an uncurved, pixel-perfect check graphic.\\n- **Segmented Radio Group**: Horizontal container where items share `2px` interior borders. Selected segment flips to `#1B1B1F` with white typography.\",\"theme\":{\"colorMode\":\"LIGHT\",\"font\":\"SPACE_GROTESK\",\"customColor\":\"#3e8e2a\",\"headlineFont\":\"SPACE_GROTESK\",\"bodyFont\":\"MANROPE\",\"labelFont\":\"MANROPE\",\"namedColors\":{\"on_tertiary_fixed_variant\":\"#910a0b\",\"outline_variant\":\"#c0cab7\",\"secondary\":\"#006a64\",\"on_tertiary\":\"#ffffff\",\"on_primary_fixed\":\"#022100\",\"surface_container_high\":\"#eae7ed\",\"inverse_primary\":\"#86db6c\",\"primary_fixed\":\"#a1f885\",\"background\":\"#fbf8fe\",\"surface_container_low\":\"#f6f2f8\",\"error_container\":\"#ffdad6\",\"secondary_container\":\"#76f7ed\",\"surface_dim\":\"#dcd9de\",\"outline\":\"#707a6a\",\"inverse_surface\":\"#303034\",\"on_secondary\":\"#ffffff\",\"on_tertiary_container\":\"#fffbff\",\"surface_container_highest\":\"#e4e1e7\",\"on_error\":\"#ffffff\",\"on_primary\":\"#ffffff\",\"primary\":\"#186b04\",\"surface_variant\":\"#e4e1e7\",\"tertiary\":\"#b0251e\",\"on_secondary_container\":\"#00716b\",\"surface_container\":\"#f0edf2\",\"tertiary_fixed\":\"#ffdad5\",\"primary_container\":\"#358522\",\"on_error_container\":\"#93000a\",\"surface_tint\":\"#1b6d07\",\"primary_fixed_dim\":\"#86db6c\",\"on_surface\":\"#1b1b1f\",\"error\":\"#ba1a1a\",\"on_tertiary_fixed\":\"#410001\",\"secondary_fixed_dim\":\"#56dad0\",\"on_surface_variant\":\"#40493b\",\"tertiary_container\":\"#d33f34\",\"on_background\":\"#1b1b1f\",\"inverse_on_surface\":\"#f3f0f5\",\"surface_container_lowest\":\"#ffffff\",\"on_primary_fixed_variant\":\"#0d5300\",\"on_primary_container\":\"#f8ffef\",\"surface_bright\":\"#fbf8fe\",\"secondary_fixed\":\"#76f7ed\",\"tertiary_fixed_dim\":\"#ffb4aa\",\"on_secondary_fixed_variant\":\"#00504b\",\"on_secondary_fixed\":\"#00201e\",\"surface\":\"#fbf8fe\"},\"designMd\":\"---\\nname: Voxel Workbench\\ncolors:\\n  surface: '#fbf8fe'\\n  surface-dim: '#dcd9de'\\n  surface-bright: '#fbf8fe'\\n  surface-container-lowest: '#ffffff'\\n  surface-container-low: '#f6f2f8'\\n  surface-container: '#f0edf2'\\n  surface-container-high: '#eae7ed'\\n  surface-container-highest: '#e4e1e7'\\n  on-surface: '#1b1b1f'\\n  on-surface-variant: '#40493b'\\n  inverse-surface: '#303034'\\n  inverse-on-surface: '#f3f0f5'\\n  outline: '#707a6a'\\n  outline-variant: '#c0cab7'\\n  surface-tint: '#1b6d07'\\n  primary: '#186b04'\\n  on-primary: '#ffffff'\\n  primary-container: '#358522'\\n  on-primary-container: '#f8ffef'\\n  inverse-primary: '#86db6c'\\n  secondary: '#006a64'\\n  on-secondary: '#ffffff'\\n  secondary-container: '#76f7ed'\\n  on-secondary-container: '#00716b'\\n  tertiary: '#b0251e'\\n  on-tertiary: '#ffffff'\\n  tertiary-container: '#d33f34'\\n  on-tertiary-container: '#fffbff'\\n  error: '#ba1a1a'\\n  on-error: '#ffffff'\\n  error-container: '#ffdad6'\\n  on-error-container: '#93000a'\\n  primary-fixed: '#a1f885'\\n  primary-fixed-dim: '#86db6c'\\n  on-primary-fixed: '#022100'\\n  on-primary-fixed-variant: '#0d5300'\\n  secondary-fixed: '#76f7ed'\\n  secondary-fixed-dim: '#56dad0'\\n  on-secondary-fixed: '#00201e'\\n  on-secondary-fixed-variant: '#00504b'\\n  tertiary-fixed: '#ffdad5'\\n  tertiary-fixed-dim: '#ffb4aa'\\n  on-tertiary-fixed: '#410001'\\n  on-tertiary-fixed-variant: '#910a0b'\\n  background: '#fbf8fe'\\n  on-background: '#1b1b1f'\\n  surface-variant: '#e4e1e7'\\ntypography:\\n  display-xl:\\n    fontFamily: Space Grotesk\\n    fontSize: 48px\\n    fontWeight: '700'\\n    lineHeight: 56px\\n    letterSpacing: -0.03em\\n  display-xl-mobile:\\n    fontFamily: Space Grotesk\\n    fontSize: 32px\\n    fontWeight: '700'\\n    lineHeight: 40px\\n    letterSpacing: -0.02em\\n  headline-lg:\\n    fontFamily: Space Grotesk\\n    fontSize: 32px\\n    fontWeight: '700'\\n    lineHeight: 40px\\n    letterSpacing: -0.02em\\n  headline-lg-mobile:\\n    fontFamily: Space Grotesk\\n    fontSize: 24px\\n    fontWeight: '700'\\n    lineHeight: 32px\\n    letterSpacing: -0.01em\\n  headline-md:\\n    fontFamily: Space Grotesk\\n    fontSize: 22px\\n    fontWeight: '600'\\n    lineHeight: 28px\\n    letterSpacing: -0.01em\\n  headline-sm:\\n    fontFamily: Space Grotesk\\n    fontSize: 18px\\n    fontWeight: '600'\\n    lineHeight: 24px\\n    letterSpacing: 0em\\n  body-lg:\\n    fontFamily: Manrope\\n    fontSize: 16px\\n    fontWeight: '500'\\n    lineHeight: 24px\\n  body-md:\\n    fontFamily: Manrope\\n    fontSize: 14px\\n    fontWeight: '500'\\n    lineHeight: 20px\\n  body-sm:\\n    fontFamily: Manrope\\n    fontSize: 12px\\n    fontWeight: '500'\\n    lineHeight: 16px\\n  label-lg:\\n    fontFamily: Manrope\\n    fontSize: 14px\\n    fontWeight: '700'\\n    lineHeight: 20px\\n    letterSpacing: 0.02em\\n  label-md:\\n    fontFamily: Manrope\\n    fontSize: 12px\\n    fontWeight: '700'\\n    lineHeight: 16px\\n    letterSpacing: 0.04em\\n  label-sm:\\n    fontFamily: Manrope\\n    fontSize: 10px\\n    fontWeight: '800'\\n    lineHeight: 14px\\n    letterSpacing: 0.06em\\n  code-mono:\\n    fontFamily: Space Grotesk\\n    fontSize: 13px\\n    fontWeight: '500'\\n    lineHeight: 18px\\n    letterSpacing: 0.02em\\nspacing:\\n  unit-2xs: 2px\\n  unit-xs: 4px\\n  unit-sm: 8px\\n  unit-md: 12px\\n  unit-base: 16px\\n  unit-lg: 24px\\n  unit-xl: 32px\\n  unit-2xl: 48px\\n  unit-3xl: 64px\\n  sidebar-width: 320px\\n  toolbar-width: 56px\\n  gutter-desktop: 16px\\n  margin-desktop: 24px\\n---\\n\\n## Brand & Style\\n\\nThis design system channels a tactile, maker's workbench aesthetic tailored for a high-precision, browser-based skin editor. It merges the deliberate modularity of classic voxel crafting environments with the discipline of modern industrial design tools. The visual environment evokes the feeling of physical drafting paper, machined stamping tools, and mechanical switches.\\n\\nThe design movement combines **Neo-Brutalist precision** with **Tactile Utility**:\\n- Raw, high-contrast ink boundaries (solid 2px stroke weight) defining mechanical zones.\\n- Flat hard-drop directional shadows without blur, simulating physical stamp-cut cards and buttons.\\n- A functional dichotomy between display voxel typography and surgical modern geometric sans for controls and data readouts.\\n- A restrained physical canvas that recedes, allowing the user's custom skin creation to be the vibrant focal point.\\n\\n## Colors\\n\\nThe palette is rooted in utilitarian drafting materials and iconic voxel resource signatures:\\n\\n### Functional Palette\\n- **Canvas / Page Background (`#F4F1EA`)**: Warm Stone Paper. Non-distracting, warm, natural canvas that reduces glare during long editing sessions.\\n- **Surface / Panels (`#FFFFFF`)**: Chalk White. Crisp, clean foreground surfaces for floating palettes, sidebars, viewports, and modal cards.\\n- **Border & High-Contrast Ink (`#1B1B1F`)**: Ink Black. 100% structural contrast used for all framing, 2px borders, divider rules, and hard drop shadows.\\n- **Text Secondary (`#5B5F66`)**: Slate Gray. Calibrated for auxiliary labels, keyboard shortcuts, grid dimensions, and inactive states while passing strict WCAG AAA contrast against Chalk surfaces.\\n\\n### Semantic & Accents\\n- **Primary / Action (`#3E8E2A`)**: Grass Green. Primary calls-to-action, active paint states, export confirmations, and canvas tool toggles.\\n- **Secondary / AI Generative (`#1FB5AC`)**: Diamond Teal. Designated strictly for procedural, AI prompt synthesis, auto-shading, and smart symmetry capabilities.\\n- **Tertiary / Destructive (`#C8372D`)**: Redstone Red. Erase modes, layer clearance, irreversible deletions, and critical alerts.\\n- **Decorative Accent (`#8A5A36`)**: Dirt Brown. Subdued structural cues, active layer markers, and contextual frame highlights.\\n\\n## Typography\\n\\nThe type system balances technical utility with mechanical personality:\\n- **Display & Headlines (`Space Grotesk`)**: Provides an engineered, structural punch with geometric proportions reminiscent of modular construction blocks while maintaining clean browser rendering at large display sizes. Used for hero headings, feature metrics, and numeric coordinate readouts.\\n- **Interface & Mechanics (`Manrope`)**: A clean, highly legible grotesque with neutral metrics that maintains supreme clarity across compact tool palettes, input labels, tooltips, and density-packed modifier trays.\\n- **Numbers & Coordinates**: All coordinates (`X, Y, Z`), RGB/Hex swatches, and pixel layer indexes leverage `Space Grotesk` with tabular figures enabled (`font-variant-numeric: tabular-nums`) to prevent jitter during interaction.\\n\\n## Layout & Spacing\\n\\nThe layout is built around a **Tool-First Desktop Layout** architecture with fixed workbench docks flanking a fluid central 3D viewport canvas.\\n\\n### Layout Model\\n- **Desktop (1280px and above)**: Full-viewport application frame (`100vh`) pinned with zero page scroll.\\n  - **Tool Ribbon**: 56px fixed left dock housing single-click drawing implements.\\n  - **Stage / Central Canvas**: Fluid workspace displaying the 3D model with an embedded bottom floating status HUD.\\n  - **Inspector Sidebar**: 320px fixed right dock housing color pickers, layer stacks, and AI generative inputs.\\n  - **Header Ribbon**: 48px fixed top bar containing file operations, undo/redo stacks, and export triggers.\\n- **Tablet (768px - 1279px)**: Inspector collapses into a slide-out drawer anchored to the right edge with a tabbed trigger handle.\\n- **Mobile (\\u003c 768px)**: Reflows into a portrait orientation with the 3D viewport taking the top 50vh, and modular bottom sheets toggling between Tools, Layers, and AI generation.\\n\\n### Spacing Rules\\n- Built on a strict 4px/8px modular base. \\n- Internal panel paddings: 12px or 16px to ensure high density without visual crowding.\\n- Tool grids: 40x40px square hit targets spaced 4px apart inside the 56px ribbon.\\n\\n## Elevation & Depth\\n\\nThis system intentionally rejects soft blur gradients and ambient lighting models. Depth is established strictly through **tactile mechanical offset shadows** and solid ink containment:\\n\\n- **Surface Rest**: All panels, cards, and modal dialogs carry a crisp `2px solid #1B1B1F` border and an unblurred, hard drop shadow: `4px 4px 0px #1B1B1F`.\\n- **Raised Interactive Elements (Buttons, Swatches, Floating Bars)**:\\n  - Default: `border: 2px solid #1B1B1F; box-shadow: 4px 4px 0px #1B1B1F; transform: translate(0, 0);`\\n  - Hover: `box-shadow: 5px 5px 0px #1B1B1F; transform: translate(-1px, -1px);`\\n  - Pressed / Active: `box-shadow: 0px 0px 0px #1B1B1F; transform: translate(4px, 4px);`\\n- **Recessed Inset Canvas / Wells (Viewport, Input boxes, Color wells)**:\\n  - Rendered with an inward border `border: 2px solid #1B1B1F` and a hard inset shadow `box-shadow: inset 2px 2px 0px rgba(27, 27, 31, 0.15);` to signal a physical cut-out inside the chalk panel.\\n- **Modal Dialogs & Overlays**:\\n  - Backdrop: `#1B1B1F` at 40% opacity with no blur filter.\\n  - Modal Box: `border: 3px solid #1B1B1F; box-shadow: 8px 8px 0px #1B1B1F;`.\\n\\n## Shapes\\n\\nThe shape system adopts a **Sharp (0px) to micro-beveled (2px max)** silhouette language, reinforcing the voxel structure of the skins being created.\\n\\n- **Standard Containers, Cards, and Panels**: Absolute 0px sharp corners (`rounded-none`). Every angle is a true 90-degree mechanical join.\\n- **Pills and Circles are Forbidden**: Tool icons, status badges, avatars, and buttons must never use circular framing. Even color swatch pickers are rendered as crisp, square tiles.\\n- **Segmented Toggles & Tabs**: Rectangular blocks aligned edge-to-edge with shared interior 2px ink borders to replicate industrial mechanical switch banks.\\n\\n## Components\\n\\n### Buttons\\n- **Primary (Grass Green)**: Background `#3E8E2A`, text `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`. On press: translate `(4px, 4px)`, shadow disappears.\\n- **AI Feature (Diamond Teal)**: Background `#1FB5AC`, text `#1B1B1F` (bold high-contrast), border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`. Includes a square geometric spark icon.\\n- **Destructive (Redstone Red)**: Background `#C8372D`, text `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`.\\n- **Ghost / Tool Button**: Background `#FFFFFF`, text `#1B1B1F`, border `2px solid #1B1B1F`, shadow `2px 2px 0px #1B1B1F`. When selected/active: Background `#1B1B1F`, text `#FFFFFF`, shadow `0 0 0`.\\n\\n### Tool Palette Swatches & Tiles\\n- **Tool Slot**: 40x40px square, `2px solid #1B1B1F`, background `#FFFFFF`. Active tool features an inverted state (`#1B1B1F` background with `#FFFFFF` icon).\\n- **Color Swatch**: Square preview tile with internal grid lines for alpha transparency. Pinned active colors feature a miniature `4px` square corner flag in `#1B1B1F`.\\n\\n### Input Fields & Controls\\n- **Text & Numeric Inputs**: Background `#FFFFFF`, border `2px solid #1B1B1F`, padding `8px 12px`. Focus state shifts the background to `#F4F1EA` with an accent outline offset of `2px solid #3E8E2A`.\\n- **Steppers & Sliders**: Sliders feature a flat square thumb (`16x16px`, `#3E8E2A` fill, `2px solid #1B1B1F`) moving along an unrounded track with a `2px solid #1B1B1F` perimeter and `#FFFFFF` background.\\n\\n### Layer Stack & Tree Items\\n- **Layer Item**: Fixed height (36px), border `2px solid #1B1B1F`, background `#FFFFFF`, bottom margin `4px`.\\n- **Active Layer**: Left edge features a `6px` solid vertical accent bar in Dirt Brown (`#8A5A36`).\\n- **Visibility Toggle**: Square eye icon button with binary states (Filled `#1B1B1F` for visible; 45-degree slash for hidden).\\n\\n### Cards & Workbenches\\n- **Workbench Card**: Base background `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`.\\n- **Card Header**: Demarcated by a solid horizontal `2px solid #1B1B1F` rule, background `#F4F1EA`, padding `8px 12px`, with labels in uppercase `label-md` tracking.\\n\\n### Checkboxes & Segmented Controls\\n- **Checkbox**: `18x18px` square, border `2px solid #1B1B1F`, background `#FFFFFF`. Checked state: solid fill with `#3E8E2A` containing an uncurved, pixel-perfect check graphic.\\n- **Segmented Radio Group**: Horizontal container where items share `2px` interior borders. Selected segment flips to `#1B1B1F` with white typography.\",\"colorVariant\":\"FIDELITY\",\"overridePrimaryColor\":\"#3e8e2a\",\"overrideSecondaryColor\":\"#1fb5ac\",\"overrideTertiaryColor\":\"#c8372d\",\"overrideNeutralColor\":\"#1b1b1f\",\"spacingScale\":2,\"typography\":{\"label-md\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"12px\",\"fontWeight\":\"700\",\"lineHeight\":\"16px\",\"letterSpacing\":\"0.04em\"},\"headline-sm\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"18px\",\"fontWeight\":\"600\",\"lineHeight\":\"24px\",\"letterSpacing\":\"0em\"},\"headline-md\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"22px\",\"fontWeight\":\"600\",\"lineHeight\":\"28px\",\"letterSpacing\":\"-0.01em\"},\"body-lg\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"16px\",\"fontWeight\":\"500\",\"lineHeight\":\"24px\"},\"code-mono\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"13px\",\"fontWeight\":\"500\",\"lineHeight\":\"18px\",\"letterSpacing\":\"0.02em\"},\"headline-lg-mobile\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"24px\",\"fontWeight\":\"700\",\"lineHeight\":\"32px\",\"letterSpacing\":\"-0.01em\"},\"label-sm\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"10px\",\"fontWeight\":\"800\",\"lineHeight\":\"14px\",\"letterSpacing\":\"0.06em\"},\"display-xl-mobile\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"32px\",\"fontWeight\":\"700\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.02em\"},\"body-sm\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"12px\",\"fontWeight\":\"500\",\"lineHeight\":\"16px\"},\"headline-lg\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"32px\",\"fontWeight\":\"700\",\"lineHeight\":\"40px\",\"letterSpacing\":\"-0.02em\"},\"body-md\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"14px\",\"fontWeight\":\"500\",\"lineHeight\":\"20px\"},\"display-xl\":{\"fontFamily\":\"Space Grotesk\",\"fontSize\":\"48px\",\"fontWeight\":\"700\",\"lineHeight\":\"56px\",\"letterSpacing\":\"-0.03em\"},\"label-lg\":{\"fontFamily\":\"Manrope\",\"fontSize\":\"14px\",\"fontWeight\":\"700\",\"lineHeight\":\"20px\",\"letterSpacing\":\"0.02em\"}},\"spacing\":{\"unit-md\":\"12px\",\"unit-xs\":\"4px\",\"unit-base\":\"16px\",\"unit-lg\":\"24px\",\"unit-sm\":\"8px\",\"unit-2xs\":\"2px\",\"unit-xl\":\"32px\",\"sidebar-width\":\"320px\",\"unit-3xl\":\"64px\",\"toolbar-width\":\"56px\",\"unit-2xl\":\"48px\",\"margin-desktop\":\"24px\",\"gutter-desktop\":\"16px\"},\"headlineFontFamily\":\"Space Grotesk\",\"bodyFontFamily\":\"Manrope\",\"labelFontFamily\":\"Manrope\"}},\"version\":\"1\"}}],\"theme\":{}}},{\"text\":\"I have refined the homepage with all requested updates while preserving the hero editor suite and the clean Voxel Workbench design language:\\n\\n### Key Changes Made:\\n1. **Header Clean-Up:**\\n   - Removed the duplicate \\\"Download PNG\\\" button, \\\"Ctrl+O\\\" keyboard hint, and \\\"v2.4\\\" tag.\\n   - Preserved only the sleek \\\"Import PNG\\\" ghost action on the right and retained the primary navigation items (*Editor*, *Skin Packs*, *AI Skins*, *Bedrock*, *Templates*).\\n\\n2. **Hero Text Readability:**\\n   - Wrapped the status pill, H1, and lead text within a solid Stone Paper (`#F4F1EA`) container with clean solid backing, removing dot-grid interference beneath the typography.\\n   - Styled the lead text at 18px (`#3A3D42`, max 2 lines): *\\\"The free skin maker for Minecraft: draw pixel by pixel, preview in 3D, and download a PNG for Java & Bedrock.\\\"*\\n\\n3. **Quick Starters Section (2/3 + 1/3 Layout):**\\n   - **Left 2/3:** 3×2 grid of six template cards (*Knight* [ARMOR], *Anime Hero* [ANIME], *Cute Bunny* [CUTE], *Robot* [ROBOT], *Street Hoodie* [HOODIE], and *Creeper Style* [MOB]), each featuring front-facing pixel previews and an \\\"Edit template\\\" button.\\n   - **Right 1/3:** Tall Diamond Teal (`#1FB5AC`) outlined AI card with *\\\"Generate a skin with AI\\\"*, prompt input, sample chips (*Samurai golem*, *Mushroom maiden*, *Copper robot*), and action button.\\n   - Cleaned up community count and model marketing badges; added the \\\"Browse all templates →\\\" link.\\n\\n4. **Capabilities Bento Grid:**\\n   - Restructured into the 5 specified cards with prominent titles:\\n     - **Large (2-col):** *\\\"Minecraft Skin Pack Maker\\\"* featuring the fanned 5-card stack with the King card elevated, `.mcpack for Bedrock` badge, and direct copy.\\n     - **Medium:** *\\\"AI Minecraft Skin Maker\\\"* with sample prompt and pixel preview.\\n     - **Medium:** *\\\"Custom Minecraft Skin Maker\\\"* showing the layer anatomy equation (Base + Outer = Final).\\n     - **Small:** *\\\"Minecraft Bedrock Skin Maker\\\"* with 4-step instructions and console disclaimer fine print.\\n     - **Small:** *\\\"Free Minecraft Skin Maker\\\"* with *\\\"No sign-up · No watermark\\\"* pill and quota clarity.\\n   - Stripped all unrequested claims, statistics, and jailbreak tags.\\n\\n5. **Workflow & FAQ Updates:**\\n   - Updated Step 01 copy to highlight blank canvas, template, or PNG upload with mirror drawing precision.\\n   - Updated the Bedrock FAQ answer directly clarifying platform support across Windows, iOS, and Android via the Dressing Room, alongside console restrictions.\\n\\n6. **Footer Polish:**\\n   - Removed the Discord link, set the copyright to 2026, and maintained the official Mojang/Microsoft disclaimer.\"},{\"suggestion\":\"Would you like to customize the 3D viewport default pose or lighting?\"},{\"suggestion\":\"Should we design the dedicated Skin Pack Maker page next?\"},{\"suggestion\":\"Would you like to refine the mobile responsive layout for this page?\"}]}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "outputComponents": [
+        {
+          "design": {
+            "screens": [
+              {
+                "designSystem": {
+                  "designSystem": {
+                    "displayName": "Voxel Workbench",
+                    "styleGuidelines": "## Brand & Style\n\nThis design system channels a tactile, maker's workbench aesthetic tailored for a high-precision, browser-based skin editor. It merges the deliberate modularity of classic voxel crafting environments with the discipline of modern industrial design tools. The visual environment evokes the feeling of physical drafting paper, machined stamping tools, and mechanical switches.\n\nThe design movement combines **Neo-Brutalist precision** with **Tactile Utility**:\n- Raw, high-contrast ink boundaries (solid 2px stroke weight) defining mechanical zones.\n- Flat hard-drop directional shadows without blur, simulating physical stamp-cut cards and buttons.\n- A functional dichotomy between display voxel typography and surgical modern geometric sans for controls and data readouts.\n- A restrained physical canvas that recedes, allowing the user's custom skin creation to be the vibrant focal point.\n\n## Layout & Spacing\n\nThe layout is built around a **Tool-First Desktop Layout** architecture with fixed workbench docks flanking a fluid central 3D viewport canvas.\n\n### Layout Model\n- **Desktop (1280px and above)**: Full-viewport application frame (`100vh`) pinned with zero page scroll.\n  - **Tool Ribbon**: 56px fixed left dock housing single-click drawing implements.\n  - **Stage / Central Canvas**: Fluid workspace displaying the 3D model with an embedded bottom floating status HUD.\n  - **Inspector Sidebar**: 320px fixed right dock housing color pickers, layer stacks, and AI generative inputs.\n  - **Header Ribbon**: 48px fixed top bar containing file operations, undo/redo stacks, and export triggers.\n- **Tablet (768px - 1279px)**: Inspector collapses into a slide-out drawer anchored to the right edge with a tabbed trigger handle.\n- **Mobile (< 768px)**: Reflows into a portrait orientation with the 3D viewport taking the top 50vh, and modular bottom sheets toggling between Tools, Layers, and AI generation.\n\n### Spacing Rules\n- Built on a strict 4px/8px modular base. \n- Internal panel paddings: 12px or 16px to ensure high density without visual crowding.\n- Tool grids: 40x40px square hit targets spaced 4px apart inside the 56px ribbon.\n\n## Elevation & Depth\n\nThis system intentionally rejects soft blur gradients and ambient lighting models. Depth is established strictly through **tactile mechanical offset shadows** and solid ink containment:\n\n- **Surface Rest**: All panels, cards, and modal dialogs carry a crisp `2px solid #1B1B1F` border and an unblurred, hard drop shadow: `4px 4px 0px #1B1B1F`.\n- **Raised Interactive Elements (Buttons, Swatches, Floating Bars)**:\n  - Default: `border: 2px solid #1B1B1F; box-shadow: 4px 4px 0px #1B1B1F; transform: translate(0, 0);`\n  - Hover: `box-shadow: 5px 5px 0px #1B1B1F; transform: translate(-1px, -1px);`\n  - Pressed / Active: `box-shadow: 0px 0px 0px #1B1B1F; transform: translate(4px, 4px);`\n- **Recessed Inset Canvas / Wells (Viewport, Input boxes, Color wells)**:\n  - Rendered with an inward border `border: 2px solid #1B1B1F` and a hard inset shadow `box-shadow: inset 2px 2px 0px rgba(27, 27, 31, 0.15);` to signal a physical cut-out inside the chalk panel.\n- **Modal Dialogs & Overlays**:\n  - Backdrop: `#1B1B1F` at 40% opacity with no blur filter.\n  - Modal Box: `border: 3px solid #1B1B1F; box-shadow: 8px 8px 0px #1B1B1F;`.\n\n## Components\n\n### Buttons\n- **Primary (Grass Green)**: Background `#3E8E2A`, text `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`. On press: translate `(4px, 4px)`, shadow disappears.\n- **AI Feature (Diamond Teal)**: Background `#1FB5AC`, text `#1B1B1F` (bold high-contrast), border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`. Includes a square geometric spark icon.\n- **Destructive (Redstone Red)**: Background `#C8372D`, text `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`.\n- **Ghost / Tool Button**: Background `#FFFFFF`, text `#1B1B1F`, border `2px solid #1B1B1F`, shadow `2px 2px 0px #1B1B1F`. When selected/active: Background `#1B1B1F`, text `#FFFFFF`, shadow `0 0 0`.\n\n### Tool Palette Swatches & Tiles\n- **Tool Slot**: 40x40px square, `2px solid #1B1B1F`, background `#FFFFFF`. Active tool features an inverted state (`#1B1B1F` background with `#FFFFFF` icon).\n- **Color Swatch**: Square preview tile with internal grid lines for alpha transparency. Pinned active colors feature a miniature `4px` square corner flag in `#1B1B1F`.\n\n### Input Fields & Controls\n- **Text & Numeric Inputs**: Background `#FFFFFF`, border `2px solid #1B1B1F`, padding `8px 12px`. Focus state shifts the background to `#F4F1EA` with an accent outline offset of `2px solid #3E8E2A`.\n- **Steppers & Sliders**: Sliders feature a flat square thumb (`16x16px`, `#3E8E2A` fill, `2px solid #1B1B1F`) moving along an unrounded track with a `2px solid #1B1B1F` perimeter and `#FFFFFF` background.\n\n### Layer Stack & Tree Items\n- **Layer Item**: Fixed height (36px), border `2px solid #1B1B1F`, background `#FFFFFF`, bottom margin `4px`.\n- **Active Layer**: Left edge features a `6px` solid vertical accent bar in Dirt Brown (`#8A5A36`).\n- **Visibility Toggle**: Square eye icon button with binary states (Filled `#1B1B1F` for visible; 45-degree slash for hidden).\n\n### Cards & Workbenches\n- **Workbench Card**: Base background `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`.\n- **Card Header**: Demarcated by a solid horizontal `2px solid #1B1B1F` rule, background `#F4F1EA`, padding `8px 12px`, with labels in uppercase `label-md` tracking.\n\n### Checkboxes & Segmented Controls\n- **Checkbox**: `18x18px` square, border `2px solid #1B1B1F`, background `#FFFFFF`. Checked state: solid fill with `#3E8E2A` containing an uncurved, pixel-perfect check graphic.\n- **Segmented Radio Group**: Horizontal container where items share `2px` interior borders. Selected segment flips to `#1B1B1F` with white typography.",
+                    "theme": {
+                      "bodyFont": "MANROPE",
+                      "bodyFontFamily": "Manrope",
+                      "colorMode": "LIGHT",
+                      "colorVariant": "FIDELITY",
+                      "customColor": "#3e8e2a",
+                      "designMd": "---\nname: Voxel Workbench\ncolors:\n  surface: '#fbf8fe'\n  surface-dim: '#dcd9de'\n  surface-bright: '#fbf8fe'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#f6f2f8'\n  surface-container: '#f0edf2'\n  surface-container-high: '#eae7ed'\n  surface-container-highest: '#e4e1e7'\n  on-surface: '#1b1b1f'\n  on-surface-variant: '#40493b'\n  inverse-surface: '#303034'\n  inverse-on-surface: '#f3f0f5'\n  outline: '#707a6a'\n  outline-variant: '#c0cab7'\n  surface-tint: '#1b6d07'\n  primary: '#186b04'\n  on-primary: '#ffffff'\n  primary-container: '#358522'\n  on-primary-container: '#f8ffef'\n  inverse-primary: '#86db6c'\n  secondary: '#006a64'\n  on-secondary: '#ffffff'\n  secondary-container: '#76f7ed'\n  on-secondary-container: '#00716b'\n  tertiary: '#b0251e'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#d33f34'\n  on-tertiary-container: '#fffbff'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#a1f885'\n  primary-fixed-dim: '#86db6c'\n  on-primary-fixed: '#022100'\n  on-primary-fixed-variant: '#0d5300'\n  secondary-fixed: '#76f7ed'\n  secondary-fixed-dim: '#56dad0'\n  on-secondary-fixed: '#00201e'\n  on-secondary-fixed-variant: '#00504b'\n  tertiary-fixed: '#ffdad5'\n  tertiary-fixed-dim: '#ffb4aa'\n  on-tertiary-fixed: '#410001'\n  on-tertiary-fixed-variant: '#910a0b'\n  background: '#fbf8fe'\n  on-background: '#1b1b1f'\n  surface-variant: '#e4e1e7'\ntypography:\n  display-xl:\n    fontFamily: Space Grotesk\n    fontSize: 48px\n    fontWeight: '700'\n    lineHeight: 56px\n    letterSpacing: -0.03em\n  display-xl-mobile:\n    fontFamily: Space Grotesk\n    fontSize: 32px\n    fontWeight: '700'\n    lineHeight: 40px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Space Grotesk\n    fontSize: 32px\n    fontWeight: '700'\n    lineHeight: 40px\n    letterSpacing: -0.02em\n  headline-lg-mobile:\n    fontFamily: Space Grotesk\n    fontSize: 24px\n    fontWeight: '700'\n    lineHeight: 32px\n    letterSpacing: -0.01em\n  headline-md:\n    fontFamily: Space Grotesk\n    fontSize: 22px\n    fontWeight: '600'\n    lineHeight: 28px\n    letterSpacing: -0.01em\n  headline-sm:\n    fontFamily: Space Grotesk\n    fontSize: 18px\n    fontWeight: '600'\n    lineHeight: 24px\n    letterSpacing: 0em\n  body-lg:\n    fontFamily: Manrope\n    fontSize: 16px\n    fontWeight: '500'\n    lineHeight: 24px\n  body-md:\n    fontFamily: Manrope\n    fontSize: 14px\n    fontWeight: '500'\n    lineHeight: 20px\n  body-sm:\n    fontFamily: Manrope\n    fontSize: 12px\n    fontWeight: '500'\n    lineHeight: 16px\n  label-lg:\n    fontFamily: Manrope\n    fontSize: 14px\n    fontWeight: '700'\n    lineHeight: 20px\n    letterSpacing: 0.02em\n  label-md:\n    fontFamily: Manrope\n    fontSize: 12px\n    fontWeight: '700'\n    lineHeight: 16px\n    letterSpacing: 0.04em\n  label-sm:\n    fontFamily: Manrope\n    fontSize: 10px\n    fontWeight: '800'\n    lineHeight: 14px\n    letterSpacing: 0.06em\n  code-mono:\n    fontFamily: Space Grotesk\n    fontSize: 13px\n    fontWeight: '500'\n    lineHeight: 18px\n    letterSpacing: 0.02em\nspacing:\n  unit-2xs: 2px\n  unit-xs: 4px\n  unit-sm: 8px\n  unit-md: 12px\n  unit-base: 16px\n  unit-lg: 24px\n  unit-xl: 32px\n  unit-2xl: 48px\n  unit-3xl: 64px\n  sidebar-width: 320px\n  toolbar-width: 56px\n  gutter-desktop: 16px\n  margin-desktop: 24px\n---\n\n## Brand & Style\n\nThis design system channels a tactile, maker's workbench aesthetic tailored for a high-precision, browser-based skin editor. It merges the deliberate modularity of classic voxel crafting environments with the discipline of modern industrial design tools. The visual environment evokes the feeling of physical drafting paper, machined stamping tools, and mechanical switches.\n\nThe design movement combines **Neo-Brutalist precision** with **Tactile Utility**:\n- Raw, high-contrast ink boundaries (solid 2px stroke weight) defining mechanical zones.\n- Flat hard-drop directional shadows without blur, simulating physical stamp-cut cards and buttons.\n- A functional dichotomy between display voxel typography and surgical modern geometric sans for controls and data readouts.\n- A restrained physical canvas that recedes, allowing the user's custom skin creation to be the vibrant focal point.\n\n## Colors\n\nThe palette is rooted in utilitarian drafting materials and iconic voxel resource signatures:\n\n### Functional Palette\n- **Canvas / Page Background (`#F4F1EA`)**: Warm Stone Paper. Non-distracting, warm, natural canvas that reduces glare during long editing sessions.\n- **Surface / Panels (`#FFFFFF`)**: Chalk White. Crisp, clean foreground surfaces for floating palettes, sidebars, viewports, and modal cards.\n- **Border & High-Contrast Ink (`#1B1B1F`)**: Ink Black. 100% structural contrast used for all framing, 2px borders, divider rules, and hard drop shadows.\n- **Text Secondary (`#5B5F66`)**: Slate Gray. Calibrated for auxiliary labels, keyboard shortcuts, grid dimensions, and inactive states while passing strict WCAG AAA contrast against Chalk surfaces.\n\n### Semantic & Accents\n- **Primary / Action (`#3E8E2A`)**: Grass Green. Primary calls-to-action, active paint states, export confirmations, and canvas tool toggles.\n- **Secondary / AI Generative (`#1FB5AC`)**: Diamond Teal. Designated strictly for procedural, AI prompt synthesis, auto-shading, and smart symmetry capabilities.\n- **Tertiary / Destructive (`#C8372D`)**: Redstone Red. Erase modes, layer clearance, irreversible deletions, and critical alerts.\n- **Decorative Accent (`#8A5A36`)**: Dirt Brown. Subdued structural cues, active layer markers, and contextual frame highlights.\n\n## Typography\n\nThe type system balances technical utility with mechanical personality:\n- **Display & Headlines (`Space Grotesk`)**: Provides an engineered, structural punch with geometric proportions reminiscent of modular construction blocks while maintaining clean browser rendering at large display sizes. Used for hero headings, feature metrics, and numeric coordinate readouts.\n- **Interface & Mechanics (`Manrope`)**: A clean, highly legible grotesque with neutral metrics that maintains supreme clarity across compact tool palettes, input labels, tooltips, and density-packed modifier trays.\n- **Numbers & Coordinates**: All coordinates (`X, Y, Z`), RGB/Hex swatches, and pixel layer indexes leverage `Space Grotesk` with tabular figures enabled (`font-variant-numeric: tabular-nums`) to prevent jitter during interaction.\n\n## Layout & Spacing\n\nThe layout is built around a **Tool-First Desktop Layout** architecture with fixed workbench docks flanking a fluid central 3D viewport canvas.\n\n### Layout Model\n- **Desktop (1280px and above)**: Full-viewport application frame (`100vh`) pinned with zero page scroll.\n  - **Tool Ribbon**: 56px fixed left dock housing single-click drawing implements.\n  - **Stage / Central Canvas**: Fluid workspace displaying the 3D model with an embedded bottom floating status HUD.\n  - **Inspector Sidebar**: 320px fixed right dock housing color pickers, layer stacks, and AI generative inputs.\n  - **Header Ribbon**: 48px fixed top bar containing file operations, undo/redo stacks, and export triggers.\n- **Tablet (768px - 1279px)**: Inspector collapses into a slide-out drawer anchored to the right edge with a tabbed trigger handle.\n- **Mobile (< 768px)**: Reflows into a portrait orientation with the 3D viewport taking the top 50vh, and modular bottom sheets toggling between Tools, Layers, and AI generation.\n\n### Spacing Rules\n- Built on a strict 4px/8px modular base. \n- Internal panel paddings: 12px or 16px to ensure high density without visual crowding.\n- Tool grids: 40x40px square hit targets spaced 4px apart inside the 56px ribbon.\n\n## Elevation & Depth\n\nThis system intentionally rejects soft blur gradients and ambient lighting models. Depth is established strictly through **tactile mechanical offset shadows** and solid ink containment:\n\n- **Surface Rest**: All panels, cards, and modal dialogs carry a crisp `2px solid #1B1B1F` border and an unblurred, hard drop shadow: `4px 4px 0px #1B1B1F`.\n- **Raised Interactive Elements (Buttons, Swatches, Floating Bars)**:\n  - Default: `border: 2px solid #1B1B1F; box-shadow: 4px 4px 0px #1B1B1F; transform: translate(0, 0);`\n  - Hover: `box-shadow: 5px 5px 0px #1B1B1F; transform: translate(-1px, -1px);`\n  - Pressed / Active: `box-shadow: 0px 0px 0px #1B1B1F; transform: translate(4px, 4px);`\n- **Recessed Inset Canvas / Wells (Viewport, Input boxes, Color wells)**:\n  - Rendered with an inward border `border: 2px solid #1B1B1F` and a hard inset shadow `box-shadow: inset 2px 2px 0px rgba(27, 27, 31, 0.15);` to signal a physical cut-out inside the chalk panel.\n- **Modal Dialogs & Overlays**:\n  - Backdrop: `#1B1B1F` at 40% opacity with no blur filter.\n  - Modal Box: `border: 3px solid #1B1B1F; box-shadow: 8px 8px 0px #1B1B1F;`.\n\n## Shapes\n\nThe shape system adopts a **Sharp (0px) to micro-beveled (2px max)** silhouette language, reinforcing the voxel structure of the skins being created.\n\n- **Standard Containers, Cards, and Panels**: Absolute 0px sharp corners (`rounded-none`). Every angle is a true 90-degree mechanical join.\n- **Pills and Circles are Forbidden**: Tool icons, status badges, avatars, and buttons must never use circular framing. Even color swatch pickers are rendered as crisp, square tiles.\n- **Segmented Toggles & Tabs**: Rectangular blocks aligned edge-to-edge with shared interior 2px ink borders to replicate industrial mechanical switch banks.\n\n## Components\n\n### Buttons\n- **Primary (Grass Green)**: Background `#3E8E2A`, text `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`. On press: translate `(4px, 4px)`, shadow disappears.\n- **AI Feature (Diamond Teal)**: Background `#1FB5AC`, text `#1B1B1F` (bold high-contrast), border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`. Includes a square geometric spark icon.\n- **Destructive (Redstone Red)**: Background `#C8372D`, text `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`.\n- **Ghost / Tool Button**: Background `#FFFFFF`, text `#1B1B1F`, border `2px solid #1B1B1F`, shadow `2px 2px 0px #1B1B1F`. When selected/active: Background `#1B1B1F`, text `#FFFFFF`, shadow `0 0 0`.\n\n### Tool Palette Swatches & Tiles\n- **Tool Slot**: 40x40px square, `2px solid #1B1B1F`, background `#FFFFFF`. Active tool features an inverted state (`#1B1B1F` background with `#FFFFFF` icon).\n- **Color Swatch**: Square preview tile with internal grid lines for alpha transparency. Pinned active colors feature a miniature `4px` square corner flag in `#1B1B1F`.\n\n### Input Fields & Controls\n- **Text & Numeric Inputs**: Background `#FFFFFF`, border `2px solid #1B1B1F`, padding `8px 12px`. Focus state shifts the background to `#F4F1EA` with an accent outline offset of `2px solid #3E8E2A`.\n- **Steppers & Sliders**: Sliders feature a flat square thumb (`16x16px`, `#3E8E2A` fill, `2px solid #1B1B1F`) moving along an unrounded track with a `2px solid #1B1B1F` perimeter and `#FFFFFF` background.\n\n### Layer Stack & Tree Items\n- **Layer Item**: Fixed height (36px), border `2px solid #1B1B1F`, background `#FFFFFF`, bottom margin `4px`.\n- **Active Layer**: Left edge features a `6px` solid vertical accent bar in Dirt Brown (`#8A5A36`).\n- **Visibility Toggle**: Square eye icon button with binary states (Filled `#1B1B1F` for visible; 45-degree slash for hidden).\n\n### Cards & Workbenches\n- **Workbench Card**: Base background `#FFFFFF`, border `2px solid #1B1B1F`, shadow `4px 4px 0px #1B1B1F`.\n- **Card Header**: Demarcated by a solid horizontal `2px solid #1B1B1F` rule, background `#F4F1EA`, padding `8px 12px`, with labels in uppercase `label-md` tracking.\n\n### Checkboxes & Segmented Controls\n- **Checkbox**: `18x18px` square, border `2px solid #1B1B1F`, background `#FFFFFF`. Checked state: solid fill with `#3E8E2A` containing an uncurved, pixel-perfect check graphic.\n- **Segmented Radio Group**: Horizontal container where items share `2px` interior borders. Selected segment flips to `#1B1B1F` with white typography.",
+                      "font": "SPACE_GROTESK",
+                      "headlineFont": "SPACE_GROTESK",
+                      "headlineFontFamily": "Space Grotesk",
+                      "labelFont": "MANROPE",
+                      "labelFontFamily": "Manrope",
+                      "namedColors": {
+                        "background": "#fbf8fe",
+                        "error": "#ba1a1a",
+                        "error_container": "#ffdad6",
+                        "inverse_on_surface": "#f3f0f5",
+                        "inverse_primary": "#86db6c",
+                        "inverse_surface": "#303034",
+                        "on_background": "#1b1b1f",
+                        "on_error": "#ffffff",
+                        "on_error_container": "#93000a",
+                        "on_primary": "#ffffff",
+                        "on_primary_container": "#f8ffef",
+                        "on_primary_fixed": "#022100",
+                        "on_primary_fixed_variant": "#0d5300",
+                        "on_secondary": "#ffffff",
+                        "on_secondary_container": "#00716b",
+                        "on_secondary_fixed": "#00201e",
+                        "on_secondary_fixed_variant": "#00504b",
+                        "on_surface": "#1b1b1f",
+                        "on_surface_variant": "#40493b",
+                        "on_tertiary": "#ffffff",
+                        "on_tertiary_container": "#fffbff",
+                        "on_tertiary_fixed": "#410001",
+                        "on_tertiary_fixed_variant": "#910a0b",
+                        "outline": "#707a6a",
+                        "outline_variant": "#c0cab7",
+                        "primary": "#186b04",
+                        "primary_container": "#358522",
+                        "primary_fixed": "#a1f885",
+                        "primary_fixed_dim": "#86db6c",
+                        "secondary": "#006a64",
+                        "secondary_container": "#76f7ed",
+                        "secondary_fixed": "#76f7ed",
+                        "secondary_fixed_dim": "#56dad0",
+                        "surface": "#fbf8fe",
+                        "surface_bright": "#fbf8fe",
+                        "surface_container": "#f0edf2",
+                        "surface_container_high": "#eae7ed",
+                        "surface_container_highest": "#e4e1e7",
+                        "surface_container_low": "#f6f2f8",
+                        "surface_container_lowest": "#ffffff",
+                        "surface_dim": "#dcd9de",
+                        "surface_tint": "#1b6d07",
+                        "surface_variant": "#e4e1e7",
+                        "tertiary": "#b0251e",
+                        "tertiary_container": "#d33f34",
+                        "tertiary_fixed": "#ffdad5",
+                        "tertiary_fixed_dim": "#ffb4aa"
+                      },
+                      "overrideNeutralColor": "#1b1b1f",
+                      "overridePrimaryColor": "#3e8e2a",
+                      "overrideSecondaryColor": "#1fb5ac",
+                      "overrideTertiaryColor": "#c8372d",
+                      "spacing": {
+                        "gutter-desktop": "16px",
+                        "margin-desktop": "24px",
+                        "sidebar-width": "320px",
+                        "toolbar-width": "56px",
+                        "unit-2xl": "48px",
+                        "unit-2xs": "2px",
+                        "unit-3xl": "64px",
+                        "unit-base": "16px",
+                        "unit-lg": "24px",
+                        "unit-md": "12px",
+                        "unit-sm": "8px",
+                        "unit-xl": "32px",
+                        "unit-xs": "4px"
+                      },
+                      "spacingScale": 2,
+                      "typography": {
+                        "body-lg": {
+                          "fontFamily": "Manrope",
+                          "fontSize": "16px",
+                          "fontWeight": "500",
+                          "lineHeight": "24px"
+                        },
+                        "body-md": {
+                          "fontFamily": "Manrope",
+                          "fontSize": "14px",
+                          "fontWeight": "500",
+                          "lineHeight": "20px"
+                        },
+                        "body-sm": {
+                          "fontFamily": "Manrope",
+                          "fontSize": "12px",
+                          "fontWeight": "500",
+                          "lineHeight": "16px"
+                        },
+                        "code-mono": {
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": "13px",
+                          "fontWeight": "500",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "18px"
+                        },
+                        "display-xl": {
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": "48px",
+                          "fontWeight": "700",
+                          "letterSpacing": "-0.03em",
+                          "lineHeight": "56px"
+                        },
+                        "display-xl-mobile": {
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": "32px",
+                          "fontWeight": "700",
+                          "letterSpacing": "-0.02em",
+                          "lineHeight": "40px"
+                        },
+                        "headline-lg": {
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": "32px",
+                          "fontWeight": "700",
+                          "letterSpacing": "-0.02em",
+                          "lineHeight": "40px"
+                        },
+                        "headline-lg-mobile": {
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": "24px",
+                          "fontWeight": "700",
+                          "letterSpacing": "-0.01em",
+                          "lineHeight": "32px"
+                        },
+                        "headline-md": {
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": "22px",
+                          "fontWeight": "600",
+                          "letterSpacing": "-0.01em",
+                          "lineHeight": "28px"
+                        },
+                        "headline-sm": {
+                          "fontFamily": "Space Grotesk",
+                          "fontSize": "18px",
+                          "fontWeight": "600",
+                          "letterSpacing": "0em",
+                          "lineHeight": "24px"
+                        },
+                        "label-lg": {
+                          "fontFamily": "Manrope",
+                          "fontSize": "14px",
+                          "fontWeight": "700",
+                          "letterSpacing": "0.02em",
+                          "lineHeight": "20px"
+                        },
+                        "label-md": {
+                          "fontFamily": "Manrope",
+                          "fontSize": "12px",
+                          "fontWeight": "700",
+                          "letterSpacing": "0.04em",
+                          "lineHeight": "16px"
+                        },
+                        "label-sm": {
+                          "fontFamily": "Manrope",
+                          "fontSize": "10px",
+                          "fontWeight": "800",
+                          "letterSpacing": "0.06em",
+                          "lineHeight": "14px"
+                        }
+                      }
+                    }
+                  },
+                  "name": "assets/5100427071b3427a955ddc2f296533e0",
+                  "version": "1"
+                },
+                "deviceType": "DESKTOP",
+                "generatedBy": "HatterAgent",
+                "height": "6570",
+                "htmlCode": {
+                  "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2U3M2EyMDljNjBhNzQwNmJiNDkxZDMxZTRmZTQ5ZmQ0EgsSBxCQ-Y3uzAgYAZIBIwoKcHJvamVjdF9pZBIVQhMzMzcyMjA0ODEwMzY3ODk1NTIz&filename=&opi=96797242",
+                  "mimeType": "text/html",
+                  "name": "projects/3372204810367895523/files/0e8d9faad2f14029bd85543c436472c3"
+                },
+                "id": "84c0ec4cb3154024a4f07ffea933014a",
+                "name": "projects/3372204810367895523/screens/84c0ec4cb3154024a4f07ffea933014a",
+                "prompt": "Refine this Minecraft Skin Maker homepage with the following exact changes while KEEPING the hero editor (toolbox, UV canvas, 3D viewport, Classic/Slim switch, layer toggles, Download Skin button, Export .mcpack) and the overall Voxel Workbench light aesthetic:\n\n1. Header:\n- Remove the \"Download PNG\" button, \"Ctrl+O\" hint, and \"v2.4\" badge.\n- Right side keeps only the \"Import PNG\" ghost button.\n- Navigation links remain: Editor, Skin Packs, AI Skins, Bedrock, Templates.\n\n2. Hero text readability:\n- Place the status pill (\"Ready • 64×64 UV HD Canvas | Java & Bedrock Compatible\"), the H1 (\"Minecraft Skin Maker - Create Your Own Skin Online\"), and the lead paragraph inside a solid Stone Paper (#F4F1EA) block with no dot-grid pattern behind the text.\n- Lead text: font-size 18px, color #3A3D42, max 2 lines: \"The free skin maker for Minecraft: draw pixel by pixel, preview in 3D, and download a PNG for Java & Bedrock.\"\n\n3. Quick Starters section:\n- Left two-thirds (2/3 width) = 3x2 grid of SIX template cards. Each card has a small front-facing pixel skin preview, a style tag badge, a name, and an \"Edit template\" button:\n  1. Knight (tag: ARMOR)\n  2. Anime Hero (tag: ANIME)\n  3. Cute Bunny (tag: CUTE)\n  4. Robot (tag: ROBOT)\n  5. Street Hoodie (tag: HOODIE)\n  6. Creeper Style (tag: MOB)\n- Right one-third (1/3 width) = tall Diamond Teal (#1FB5AC) outlined AI card:\n  - Title: \"Generate a skin with AI\"\n  - Text input with placeholder: \"a neon cyberpunk ninja…\"\n  - Three prompt chips: \"Samurai golem\", \"Mushroom maiden\", \"Copper robot\"\n  - Teal button: \"Generate skin\"\n- Top-right section link: \"Browse all templates →\"\n- Remove \"10,000+ Community Skins\", \"GPT-Skin v4\", and \"AI Neural Engine\" labels.\n\n4. Capabilities Bento:\n- Section heading stays: \"02 // CAPABILITIES Everything you can craft with MCSkinGenerator\".\n- Bento tiles must have exactly these five tile titles styled as the most prominent text in each tile:\n  1. LARGE tile (spans 2 columns): Title: \"Minecraft Skin Pack Maker\"\n     - Visual: a fanned stack of 5 colorful pixel skin cards (Warrior, Ranger, King, Mage, Rogue) with the middle one raised.\n     - Badge: \".mcpack for Bedrock\"\n     - Text: \"Bundle several skins into one pack with an auto-generated manifest, then import it into Minecraft Bedrock in one tap.\"\n     - Link: \"Make a skin pack →\"\n  2. MEDIUM tile (teal accent): Title: \"AI Minecraft Skin Maker\"\n     - Visual: prompt example \"cyber frog with diamond armor\" next to a small generated pixel skin.\n     - Text: \"Describe it or upload a photo — get a real 64×64 skin file, not just a picture.\"\n     - Link: \"Try AI skins →\"\n  3. MEDIUM tile: Title: \"Custom Minecraft Skin Maker\"\n     - Visual: diagram/illustration of base layer + outer layer = final skin.\n     - Text: \"Layers, mirror drawing, palettes and templates for full control over every pixel.\"\n     - Link: \"Open the editor →\"\n  4. SMALL tile: Title: \"Minecraft Bedrock Skin Maker\"\n     - Content: Numbered steps:\n       1 Design or pick a skin\n       2 Download the PNG\n       3 Open Dressing Room → Classic Skins\n       4 Import and choose your file\n     - Fine print: \"Windows, iOS & Android. Consoles can't import custom PNGs.\"\n     - Link: \"Bedrock guide →\"\n  5. SMALL tile: Title: \"Free Minecraft Skin Maker\"\n     - Stamp / badge: \"No sign-up · No watermark\"\n     - Text: \"The editor, templates and PNG downloads are free forever. AI generations include a daily free quota.\"\n     - Link: \"Why it's free →\"\n- Remove \"Zero Jailbreak\", \"Works on iPad, Mobile, Switch & PC\", \"128×128 HD UV Ready\", \"98% Match\", and any invented statistics.\n\n5. How it works:\n- Step 01 text becomes: \"Start from a blank canvas, a template, or your existing skin PNG. Mirror drawing keeps both sides symmetrical.\"\n- Remove the \"10,000 community templates\" claim.\n\n6. FAQ:\n- Keep the five questions.\n- Update the Bedrock question answer to: \"Yes on Windows, iOS and Android via Dressing Room → Classic Skins → Import. Consoles don't support importing custom PNG skins.\"\n\n7. Footer:\n- Remove \"Discord Community\" link.\n- Update copyright year to 2026: \"© 2026 MCSkinGenerator. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.\"\n- Keep Mojang / Microsoft disclaimer.",
+                "screenMetadata": {
+                  "agentType": "PRO_AGENT",
+                  "status": "COMPLETE"
+                },
+                "screenType": "DESIGN",
+                "screenshot": {
+                  "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1UPyMuRCrgYVQ4-JckZr0q9FgnUs_C-FQE-6-D0rR4uPhmALseaPH5edindyPyl-bZMTNdySLRleXE6jONUBLjsKzSY6cMakBxIG0GSBeDvAJwPFm9PsyEku9t0PPrFiKmx-uDH0GmXhNre9Baox0btFyGDlsiyyDzjuCxn1gEB6F6n4k6kAnPEtkLjX-icprQcn0DNKx_lF7CRxpCesapGVBdXpYwq3iCKkJjkuAPNRRrvTN_BCuEto4A",
+                  "name": "projects/3372204810367895523/files/ac71514e01e14055a1f4a89023cadd24"
+                },
+                "theme": {
+                  "bodyFont": "MANROPE",
+                  "bodyFontFamily": "Manrope",
+                  "colorMode": "LIGHT",
+                  "colorVariant": "FIDELITY",
+                  "customColor": "#3e8e2a",
+                  "font": "SPACE_GROTESK",
+                  "headlineFont": "SPACE_GROTESK",
+                  "headlineFontFamily": "Space Grotesk",
+                  "labelFont": "MANROPE",
+                  "labelFontFamily": "Manrope",
+                  "namedColors": {
+                    "background": "#fbf8fe",
+                    "error": "#ba1a1a",
+                    "error_container": "#ffdad6",
+                    "inverse_on_surface": "#f3f0f5",
+                    "inverse_primary": "#86db6c",
+                    "inverse_surface": "#303034",
+                    "on_background": "#1b1b1f",
+                    "on_error": "#ffffff",
+                    "on_error_container": "#93000a",
+                    "on_primary": "#ffffff",
+                    "on_primary_container": "#f8ffef",
+                    "on_primary_fixed": "#022100",
+                    "on_primary_fixed_variant": "#0d5300",
+                    "on_secondary": "#ffffff",
+                    "on_secondary_container": "#00716b",
+                    "on_secondary_fixed": "#00201e",
+                    "on_secondary_fixed_variant": "#00504b",
+                    "on_surface": "#1b1b1f",
+                    "on_surface_variant": "#40493b",
+                    "on_tertiary": "#ffffff",
+                    "on_tertiary_container": "#fffbff",
+                    "on_tertiary_fixed": "#410001",
+                    "on_tertiary_fixed_variant": "#910a0b",
+                    "outline": "#707a6a",
+                    "outline_variant": "#c0cab7",
+                    "primary": "#186b04",
+                    "primary_container": "#358522",
+                    "primary_fixed": "#a1f885",
+                    "primary_fixed_dim": "#86db6c",
+                    "secondary": "#006a64",
+                    "secondary_container": "#76f7ed",
+                    "secondary_fixed": "#76f7ed",
+                    "secondary_fixed_dim": "#56dad0",
+                    "surface": "#fbf8fe",
+                    "surface_bright": "#fbf8fe",
+                    "surface_container": "#f0edf2",
+                    "surface_container_high": "#eae7ed",
+                    "surface_container_highest": "#e4e1e7",
+                    "surface_container_low": "#f6f2f8",
+                    "surface_container_lowest": "#ffffff",
+                    "surface_dim": "#dcd9de",
+                    "surface_tint": "#1b6d07",
+                    "surface_variant": "#e4e1e7",
+                    "tertiary": "#b0251e",
+                    "tertiary_container": "#d33f34",
+                    "tertiary_fixed": "#ffdad5",
+                    "tertiary_fixed_dim": "#ffb4aa"
+                  },
+                  "overrideNeutralColor": "#1b1b1f",
+                  "overridePrimaryColor": "#3e8e2a",
+                  "overrideSecondaryColor": "#1fb5ac",
+                  "overrideTertiaryColor": "#c8372d",
+                  "spacing": {
+                    "gutter-desktop": "16px",
+                    "margin-desktop": "24px",
+                    "sidebar-width": "320px",
+                    "toolbar-width": "56px",
+                    "unit-2xl": "48px",
+                    "unit-2xs": "2px",
+                    "unit-3xl": "64px",
+                    "unit-base": "16px",
+                    "unit-lg": "24px",
+                    "unit-md": "12px",
+                    "unit-sm": "8px",
+                    "unit-xl": "32px",
+                    "unit-xs": "4px"
+                  },
+                  "spacingScale": 2,
+                  "typography": {
+                    "body-lg": {
+                      "fontFamily": "Manrope",
+                      "fontSize": "16px",
+                      "fontWeight": "500",
+                      "lineHeight": "24px"
+                    },
+                    "body-md": {
+                      "fontFamily": "Manrope",
+                      "fontSize": "14px",
+                      "fontWeight": "500",
+                      "lineHeight": "20px"
+                    },
+                    "body-sm": {
+                      "fontFamily": "Manrope",
+                      "fontSize": "12px",
+                      "fontWeight": "500",
+                      "lineHeight": "16px"
+                    },
+                    "code-mono": {
+                      "fontFamily": "Space Grotesk",
+                      "fontSize": "13px",
+                      "fontWeight": "500",
+                      "letterSpacing": "0.02em",
+                      "lineHeight": "18px"
+                    },
+                    "display-xl": {
+                      "fontFamily": "Space Grotesk",
+                      "fontSize": "48px",
+                      "fontWeight": "700",
+                      "letterSpacing": "-0.03em",
+                      "lineHeight": "56px"
+                    },
+                    "display-xl-mobile": {
+                      "fontFamily": "Space Grotesk",
+                      "fontSize": "32px",
+                      "fontWeight": "700",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "40px"
+                    },
+                    "headline-lg": {
+                      "fontFamily": "Space Grotesk",
+                      "fontSize": "32px",
+                      "fontWeight": "700",
+                      "letterSpacing": "-0.02em",
+                      "lineHeight": "40px"
+                    },
+                    "headline-lg-mobile": {
+                      "fontFamily": "Space Grotesk",
+                      "fontSize": "24px",
+                      "fontWeight": "700",
+                      "letterSpacing": "-0.01em",
+                      "lineHeight": "32px"
+                    },
+                    "headline-md": {
+                      "fontFamily": "Space Grotesk",
+                      "fontSize": "22px",
+                      "fontWeight": "600",
+                      "letterSpacing": "-0.01em",
+                      "lineHeight": "28px"
+                    },
+                    "headline-sm": {
+                      "fontFamily": "Space Grotesk",
+                      "fontSize": "18px",
+                      "fontWeight": "600",
+                      "letterSpacing": "0em",
+                      "lineHeight": "24px"
+                    },
+                    "label-lg": {
+                      "fontFamily": "Manrope",
+                      "fontSize": "14px",
+                      "fontWeight": "700",
+                      "letterSpacing": "0.02em",
+                      "lineHeight": "20px"
+                    },
+                    "label-md": {
+                      "fontFamily": "Manrope",
+                      "fontSize": "12px",
+                      "fontWeight": "700",
+                      "letterSpacing": "0.04em",
+                      "lineHeight": "16px"
+                    },
+                    "label-sm": {
+                      "fontFamily": "Manrope",
+                      "fontSize": "10px",
+                      "fontWeight": "800",
+                      "letterSpacing": "0.06em",
+                      "lineHeight": "14px"
+                    }
+                  }
+                },
+                "title": "MCSkinGenerator - Refined Workbench",
+                "width": "2560"
+              }
+            ],
+            "theme": {}
+          }
+        },
+        {
+          "text": "I have refined the homepage with all requested updates while preserving the hero editor suite and the clean Voxel Workbench design language:\n\n### Key Changes Made:\n1. **Header Clean-Up:**\n   - Removed the duplicate \"Download PNG\" button, \"Ctrl+O\" keyboard hint, and \"v2.4\" tag.\n   - Preserved only the sleek \"Import PNG\" ghost action on the right and retained the primary navigation items (*Editor*, *Skin Packs*, *AI Skins*, *Bedrock*, *Templates*).\n\n2. **Hero Text Readability:**\n   - Wrapped the status pill, H1, and lead text within a solid Stone Paper (`#F4F1EA`) container with clean solid backing, removing dot-grid interference beneath the typography.\n   - Styled the lead text at 18px (`#3A3D42`, max 2 lines): *\"The free skin maker for Minecraft: draw pixel by pixel, preview in 3D, and download a PNG for Java & Bedrock.\"*\n\n3. **Quick Starters Section (2/3 + 1/3 Layout):**\n   - **Left 2/3:** 3×2 grid of six template cards (*Knight* [ARMOR], *Anime Hero* [ANIME], *Cute Bunny* [CUTE], *Robot* [ROBOT], *Street Hoodie* [HOODIE], and *Creeper Style* [MOB]), each featuring front-facing pixel previews and an \"Edit template\" button.\n   - **Right 1/3:** Tall Diamond Teal (`#1FB5AC`) outlined AI card with *\"Generate a skin with AI\"*, prompt input, sample chips (*Samurai golem*, *Mushroom maiden*, *Copper robot*), and action button.\n   - Cleaned up community count and model marketing badges; added the \"Browse all templates →\" link.\n\n4. **Capabilities Bento Grid:**\n   - Restructured into the 5 specified cards with prominent titles:\n     - **Large (2-col):** *\"Minecraft Skin Pack Maker\"* featuring the fanned 5-card stack with the King card elevated, `.mcpack for Bedrock` badge, and direct copy.\n     - **Medium:** *\"AI Minecraft Skin Maker\"* with sample prompt and pixel preview.\n     - **Medium:** *\"Custom Minecraft Skin Maker\"* showing the layer anatomy equation (Base + Outer = Final).\n     - **Small:** *\"Minecraft Bedrock Skin Maker\"* with 4-step instructions and console disclaimer fine print.\n     - **Small:** *\"Free Minecraft Skin Maker\"* with *\"No sign-up · No watermark\"* pill and quota clarity.\n   - Stripped all unrequested claims, statistics, and jailbreak tags.\n\n5. **Workflow & FAQ Updates:**\n   - Updated Step 01 copy to highlight blank canvas, template, or PNG upload with mirror drawing precision.\n   - Updated the Bedrock FAQ answer directly clarifying platform support across Windows, iOS, and Android via the Dressing Room, alongside console restrictions.\n\n6. **Footer Polish:**\n   - Removed the Discord link, set the copyright to 2026, and maintained the official Mojang/Microsoft disclaimer."
+        },
+        {
+          "suggestion": "Would you like to customize the 3D viewport default pose or lighting?"
+        },
+        {
+          "suggestion": "Should we design the dedicated Skin Pack Maker page next?"
+        },
+        {
+          "suggestion": "Would you like to refine the mobile responsive layout for this page?"
+        }
+      ],
+      "projectId": "3372204810367895523",
+      "sessionId": "15571423525090213387"
+    }
+  }
+}
