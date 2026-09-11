@@ -32,11 +32,11 @@ interface Tile {
   soon?: boolean;
 }
 const TILES: Tile[] = [
-  { title: 'Minecraft Skin Pack Maker', desc: 'Bundle several skins into one pack with an auto-generated manifest, then import it into Minecraft Bedrock in one tap.', cta: 'Make a skin pack', span: 'sm:col-span-2', soon: true },
+  { title: 'Minecraft Skin Pack Maker', desc: 'Bundle several skins into one pack with an auto-generated manifest, then import it into Minecraft Bedrock in one tap.', cta: 'Make a skin pack', href: '/minecraft-skin-pack-maker', span: 'sm:col-span-2' },
   { title: 'AI Minecraft Skin Maker', desc: 'Describe it or upload a photo — get a Minecraft skin in seconds, then keep editing it here.', href: '/ai-image-effects/ai-minecraft-skin', cta: 'Try AI skins', accent: 'diamond', span: '' },
-  { title: 'Custom Minecraft Skin Maker', desc: 'Layers, mirror drawing, palettes and templates for full control over every pixel.', cta: 'Open the editor', href: '#editor', span: '' },
-  { title: 'Minecraft Bedrock Skin Maker', desc: 'Design a 64×64 PNG and import it into Bedrock Edition via Dressing Room → Classic Skins.', cta: 'Bedrock guide', span: '', soon: true },
-  { title: 'Free Minecraft Skin Maker', desc: 'The editor, templates and PNG downloads are free. No sign-up, no watermark.', cta: "Why it's free", span: '', soon: true },
+  { title: 'Custom Minecraft Skin Maker', desc: 'Layers, mirror drawing, palettes and templates for full control over every pixel.', cta: 'Open the editor', href: '/custom-minecraft-skin-maker', span: '' },
+  { title: 'Minecraft Bedrock Skin Maker', desc: 'Design a 64×64 PNG and import it into Bedrock Edition via Dressing Room → Classic Skins.', cta: 'Bedrock guide', href: '/minecraft-bedrock-skin-maker', span: '' },
+  { title: 'Free Minecraft Skin Maker', desc: 'The editor, templates and PNG downloads are free. No sign-up, no watermark.', cta: "Why it's free", href: '/free-minecraft-skin-maker', span: '' },
 ];
 
 const STEPS = [

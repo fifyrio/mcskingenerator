@@ -7,7 +7,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const paths = [
     '',
+    '/custom-minecraft-skin-maker',
+    '/minecraft-skin-pack-maker',
     '/ai-image-effects/ai-minecraft-skin',
+    '/minecraft-bedrock-skin-maker',
+    '/free-minecraft-skin-maker',
     '/minecraft-skin',
     '/pricing',
     '/privacy',
