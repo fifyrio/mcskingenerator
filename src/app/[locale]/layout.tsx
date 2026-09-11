@@ -1,5 +1,5 @@
 import '../globals.css';
-import { Inter, Instrument_Serif, Barlow } from 'next/font/google';
+import { Manrope, Pixelify_Sans } from 'next/font/google';
 import Footer from '@/components/common/Footer';
 import { AuthProvider } from '@/contexts/AuthContext';
 import AppToaster from '@/components/common/AppToaster';
@@ -10,25 +10,18 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
-const inter = Inter({
+// Voxel Workbench typography: Manrope (body/UI) + Pixelify Sans (pixel display).
+const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-heading',
-  display: 'swap',
-});
-
-const barlow = Barlow({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '700', '800'],
   variable: '--font-body',
+  display: 'swap',
+});
+
+const pixelifySans = Pixelify_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-pixel',
   display: 'swap',
 });
 
@@ -60,7 +53,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} ${instrumentSerif.variable} ${barlow.variable}`}>
+    <html lang={locale} className={`${manrope.variable} ${pixelifySans.variable}`}>
       <body className="font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <AuthProvider>
