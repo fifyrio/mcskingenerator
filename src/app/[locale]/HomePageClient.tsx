@@ -2,17 +2,10 @@
 
 import { useState } from 'react';
 import { Link as I18nLink } from '@/i18n/routing';
+import VoxelHeader from '@/components/common/VoxelHeader';
 import SkinEditor from '@/components/editor/SkinEditor';
 import TemplateCard from '@/components/editor/TemplateCard';
 import { TEMPLATES } from '@/lib/skin/atlas';
-
-const NAV = [
-  { label: 'Editor', href: '#editor' },
-  { label: 'Skin Packs', href: '#make' },
-  { label: 'AI Skins', href: '/ai-image-effects/ai-minecraft-skin' },
-  { label: 'Bedrock', href: '#make' },
-  { label: 'Templates', href: '#start' },
-];
 
 const PROMPTS = ['Samurai golem', 'Mushroom maiden', 'Copper robot'];
 
@@ -60,23 +53,7 @@ export default function HomePageClient() {
 
   return (
     <div className="workbench-bg min-h-screen text-ink">
-      {/* Header */}
-      <header className="sticky top-0 z-30 border-b-2 border-ink bg-paper/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6">
-          <a href="#top" className="flex items-center gap-2">
-            <span className="grid h-7 w-7 place-items-center border-2 border-ink bg-grass text-chalk">⛏</span>
-            <span className="font-pixel text-lg">MCSkinGenerator</span>
-          </a>
-          <nav className="ml-6 hidden items-center gap-5 md:flex" aria-label="Main navigation">
-            {NAV.map((n) => (
-              <a key={n.label} href={n.href} className="text-sm font-semibold text-ink-muted hover:text-grass-ink">{n.label}</a>
-            ))}
-          </nav>
-          <a href="#editor" className="ml-auto border-2 border-ink bg-chalk px-3 py-1.5 text-sm font-semibold shadow-block-sm press-block">
-            Import PNG
-          </a>
-        </div>
-      </header>
+      <VoxelHeader />
 
       <main id="top" className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
         {/* Hero + editor */}
