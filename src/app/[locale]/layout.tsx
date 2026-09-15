@@ -26,7 +26,7 @@ const pixelifySans = Pixelify_Sans({
 });
 
 export const metadata = {
-  title: 'Minecraft Skin Maker – Create Your Own Skin Online | MCSkinGenerator',
+  title: 'Minecraft Skin Maker - Free Online Skin Creator',
   description: 'Free skin maker for Minecraft: draw your own skin, preview in 3D, and download a PNG for Java & Bedrock.',
   metadataBase: new URL('https://mcskingenerator.com'),
   alternates: {

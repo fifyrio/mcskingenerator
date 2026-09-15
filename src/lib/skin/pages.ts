@@ -29,7 +29,7 @@ export const SKIN_PAGES: Record<string, SkinPageRef> = {
   ai: {
     key: 'ai',
     title: 'AI Minecraft Skin Maker',
-    href: '/ai-image-effects/ai-minecraft-skin',
+    href: '/ai-minecraft-skin-maker',
     blurb: 'Generate a skin from a text prompt or a photo.',
   },
   bedrock: {

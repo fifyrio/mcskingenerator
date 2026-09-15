@@ -14,7 +14,7 @@ export async function generateMetadata({
 
   const baseUrl = 'https://mcskingenerator.com';
   const pathSegment = locale === 'en' ? '' : `/${locale}`;
-  const canonicalUrl = `${baseUrl}${pathSegment}/ai-image-effects/ai-minecraft-skin`;
+  const canonicalUrl = `${baseUrl}${pathSegment}/ai-minecraft-skin-maker`;
 
   const getOGLocale = (locale: string): string => {
     const localeMap: Record<string, string> = {
@@ -39,7 +39,6 @@ export async function generateMetadata({
   return {
     title: t('title'),
     description: t('description'),
-    keywords: t('keywords'),
     openGraph: {
       title: t('ogTitle'),
       description: t('ogDescription'),
@@ -64,22 +63,7 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        'en': `${baseUrl}/ai-image-effects/ai-minecraft-skin`,
-        'zh': `${baseUrl}/zh/ai-image-effects/ai-minecraft-skin`,
-        'zh-TW': `${baseUrl}/zh-TW/ai-image-effects/ai-minecraft-skin`,
-        'de': `${baseUrl}/de/ai-image-effects/ai-minecraft-skin`,
-        'fr': `${baseUrl}/fr/ai-image-effects/ai-minecraft-skin`,
-        'ja': `${baseUrl}/ja/ai-image-effects/ai-minecraft-skin`,
-        'ko': `${baseUrl}/ko/ai-image-effects/ai-minecraft-skin`,
-        'es': `${baseUrl}/es/ai-image-effects/ai-minecraft-skin`,
-        'pt': `${baseUrl}/pt/ai-image-effects/ai-minecraft-skin`,
-        'ru': `${baseUrl}/ru/ai-image-effects/ai-minecraft-skin`,
-        'it': `${baseUrl}/it/ai-image-effects/ai-minecraft-skin`,
-        'th': `${baseUrl}/th/ai-image-effects/ai-minecraft-skin`,
-        'vi': `${baseUrl}/vi/ai-image-effects/ai-minecraft-skin`,
-        'id': `${baseUrl}/id/ai-image-effects/ai-minecraft-skin`
-      }
+      languages: { 'x-default': `${baseUrl}/ai-minecraft-skin-maker` },
     },
     robots: {
       index: true,
@@ -110,7 +94,7 @@ export default async function AiMinecraftSkinPage({
 
   const baseUrl = 'https://mcskingenerator.com';
   const pathSegment = locale === 'en' ? '' : `/${locale}`;
-  const canonicalUrl = `${baseUrl}${pathSegment}/ai-image-effects/ai-minecraft-skin`;
+  const canonicalUrl = `${baseUrl}${pathSegment}/ai-minecraft-skin-maker`;
 
   const faqItems = [1, 2, 3, 4].map(i => ({
     question: tFaq(`items.${i}.question`),
@@ -128,7 +112,6 @@ export default async function AiMinecraftSkinPage({
       <FAQSchema items={faqItems} />
       <BreadcrumbSchema items={[
         { name: 'Home', url: baseUrl },
-        { name: 'AI Image Effects', url: `${baseUrl}${pathSegment}/ai-image-effects` },
         { name: tSeo('ogTitle'), url: canonicalUrl },
       ]} />
       <AiMinecraftSkinExperience skinPresets={presets.skinStyles} />

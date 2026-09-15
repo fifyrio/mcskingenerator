@@ -6,6 +6,7 @@ import VoxelHeader from '@/components/common/VoxelHeader';
 import SkinEditor from '@/components/editor/SkinEditor';
 import TemplateCard from '@/components/editor/TemplateCard';
 import { TEMPLATES } from '@/lib/skin/atlas';
+import { HOME_FAQ } from '@/lib/home-content';
 
 const PROMPTS = ['Samurai golem', 'Mushroom maiden', 'Copper robot'];
 
@@ -20,23 +21,16 @@ interface Tile {
 }
 const TILES: Tile[] = [
   { title: 'Minecraft Skin Pack Maker', desc: 'Bundle several skins into one pack with an auto-generated manifest, then import it into Minecraft Bedrock in one tap.', cta: 'Make a skin pack', href: '/minecraft-skin-pack-maker', span: 'sm:col-span-2' },
-  { title: 'AI Minecraft Skin Maker', desc: 'Describe it or upload a photo — get a Minecraft skin in seconds, then keep editing it here.', href: '/ai-image-effects/ai-minecraft-skin', cta: 'Try AI skins', accent: 'diamond', span: '' },
+  { title: 'AI Minecraft Skin Maker', desc: 'Describe it or upload a photo — get a Minecraft skin in seconds, then keep editing it here.', href: '/ai-minecraft-skin-maker', cta: 'Try AI skins', accent: 'diamond', span: '' },
   { title: 'Custom Minecraft Skin Maker', desc: 'Layers, mirror drawing, palettes and templates for full control over every pixel.', cta: 'Open the editor', href: '/custom-minecraft-skin-maker', span: '' },
   { title: 'Minecraft Bedrock Skin Maker', desc: 'Design a 64×64 PNG and import it into Bedrock Edition via Dressing Room → Classic Skins.', cta: 'Bedrock guide', href: '/minecraft-bedrock-skin-maker', span: '' },
   { title: 'Free Minecraft Skin Maker', desc: 'The editor, templates and PNG downloads are free. No sign-up, no watermark.', cta: "Why it's free", href: '/free-minecraft-skin-maker', span: '' },
 ];
 
 const STEPS = [
-  { n: '01', title: 'Draw or pick a template', body: 'Start from a blank canvas or a template. Mirror drawing keeps both sides symmetrical.' },
-  { n: '02', title: 'Preview in real-time 3D', body: 'Rotate your character and toggle the outer layer to check every angle before you export.' },
-  { n: '03', title: 'Download & play', body: 'Download a 64×64 PNG ready for Minecraft Java, or import it into Bedrock Edition.' },
-];
-
-const FAQ = [
-  { q: 'How do I use my skin in Minecraft Java Edition?', a: 'Download the PNG, open the Minecraft Launcher, go to the Skins tab, click New Skin, pick Classic or Slim, and select your file.' },
-  { q: 'Can I use these skins on Minecraft Bedrock?', a: 'Yes — on Windows, iOS and Android via Dressing Room → Classic Skins → Import. Consoles cannot import custom PNG skins.' },
-  { q: "What's the difference between Classic (4px) and Slim (3px)?", a: 'Classic (Steve) has 4-pixel-wide arms; Slim (Alex) has 3-pixel-wide arms. Toggle the model in the 3D preview to match your character.' },
-  { q: 'Is MCSkinGenerator free?', a: 'The editor, templates and PNG downloads are 100% free with no sign-up and no watermark.' },
+  { n: '01', title: 'Draw or pick a template', body: 'Start from a blank canvas, a ready-made template, or your own existing skin. Pick a color, choose the pencil, fill or eyedropper tool, and paint the head, body, arms and legs. Mirror drawing keeps both sides of your character symmetrical automatically.' },
+  { n: '02', title: 'Preview in real-time 3D', body: 'Every pixel you place updates the rotating 3D model instantly. Switch between the Classic and Slim body types and toggle the outer layer on and off so you can check hats, jackets and sleeves from every angle before exporting.' },
+  { n: '03', title: 'Download & play', body: 'When it looks right, download a clean 64×64 PNG that works in Minecraft Java Edition, or follow the Bedrock guide to import it in-game. There is no watermark and no limit on how many skins you save.' },
 ];
 
 export default function HomePageClient() {
@@ -65,11 +59,37 @@ export default function HomePageClient() {
             <h1 id="hero-heading" className="mt-4 font-pixel text-3xl leading-tight sm:text-5xl">
               Minecraft Skin Maker – Create Your Own Skin Online
             </h1>
-            <p className="mt-3 max-w-2xl text-lg text-ink-muted">
-              The free skin maker for Minecraft: draw pixel by pixel, preview in 3D, and download a PNG for Java &amp; Bedrock.
+            <p className="mt-3 max-w-3xl text-lg text-ink-muted">
+              MCSkinGenerator is a free online skin maker for Minecraft that runs entirely in your browser — no
+              download, no sign-up and no watermark. Draw your character pixel by pixel on a true 64×64 canvas,
+              recolor one of the ready-made templates, or generate a skin from a photo, and watch it update live on
+              a rotating 3D model. Everything you make works in both Minecraft Java and Bedrock Edition, and you can
+              export a clean PNG (or a Bedrock skin pack) the moment it looks right.
             </p>
           </div>
           <SkinEditor template={template} templateNonce={templateNonce} />
+
+          {/* How to use — guidance copy */}
+          <div className="mt-6 grid gap-4 border-2 border-ink bg-chalk p-6 shadow-block sm:p-8 md:grid-cols-2">
+            <div>
+              <h2 className="font-pixel text-2xl">How to use this skin maker</h2>
+              <p className="mt-3 text-ink-muted">
+                Pick a color from the palette (or type an exact hex value), then choose a tool: the pencil paints
+                single pixels, the fill bucket floods a whole region, and the eyedropper copies a color you have
+                already used. Use the Head, Body, Arms and Legs tabs to focus on one part of your character at a time,
+                and turn on mirror mode to paint both sides at once for clean, symmetrical results.
+              </p>
+            </div>
+            <div>
+              <p className="text-ink-muted md:mt-11">
+                The right-hand panel shows your skin on a live 3D model. Rotate it, switch between the Classic (4px)
+                and Slim (3px) body types, and toggle the base skin and outer layer so you can see exactly how hats
+                and jackets sit on top. When you are done, click <span className="font-semibold text-ink">Download
+                Skin (.PNG)</span> to save a game-ready file, or reset the canvas and start again — it is completely
+                free, every single time.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Quick starters */}
@@ -91,7 +111,7 @@ export default function HomePageClient() {
                   <span key={p} className="border-2 border-ink bg-chalk px-2 py-1 text-xs">{p}</span>
                 ))}
               </div>
-              <I18nLink href="/ai-image-effects/ai-minecraft-skin" prefetch={false} className="mt-4 block border-2 border-ink bg-diamond px-4 py-2.5 text-center text-sm font-semibold text-ink shadow-block press-block">
+              <I18nLink href="/ai-minecraft-skin-maker" prefetch={false} className="mt-4 block border-2 border-ink bg-diamond px-4 py-2.5 text-center text-sm font-semibold text-ink shadow-block press-block">
                 Generate skin
               </I18nLink>
             </div>
@@ -130,9 +150,28 @@ export default function HomePageClient() {
           </div>
         </section>
 
+        {/* Why use it */}
+        <section className="mt-16 max-w-3xl">
+          <p className="font-pixel text-sm text-grass-ink">03 // WHY MCSKINGENERATOR</p>
+          <h2 className="font-pixel text-2xl sm:text-3xl">Built for Minecraft players, not designers</h2>
+          <p className="mt-4 text-ink-muted">
+            Most people who want a new Minecraft skin do not want to learn image-editing software — they just want a
+            character that looks like them, or like the idea in their head. MCSkinGenerator keeps that simple. The
+            canvas is a real 64×64 skin map, so what you draw is exactly what appears in game, and the live 3D preview
+            means you never have to guess how a texture wraps around the model. Pick a color, block in the shapes, and
+            adjust as you go.
+          </p>
+          <p className="mt-3 text-ink-muted">
+            When you need a head start, the template library gives you a knight, a robot, a hoodie character and more
+            to recolor, and the AI skin maker can turn a short description or a photo into a starting point in
+            seconds. Whether you play Java or Bedrock, on a laptop or a phone, you get the same tools and the same
+            clean PNG export — no accounts, no watermarks, and no paywall between you and a finished skin.
+          </p>
+        </section>
+
         {/* How it works */}
         <section className="mt-16">
-          <p className="font-pixel text-sm text-grass-ink">03 // WORKFLOW</p>
+          <p className="font-pixel text-sm text-grass-ink">04 // WORKFLOW</p>
           <h2 className="font-pixel text-2xl sm:text-3xl">Create your skin in 3 steps</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {STEPS.map((s) => (
@@ -147,10 +186,10 @@ export default function HomePageClient() {
 
         {/* FAQ */}
         <section className="mt-16 max-w-3xl">
-          <p className="font-pixel text-sm text-grass-ink">04 // FAQ</p>
+          <p className="font-pixel text-sm text-grass-ink">05 // FAQ</p>
           <h2 className="font-pixel text-2xl sm:text-3xl">Frequently asked questions</h2>
           <div className="mt-6 space-y-3">
-            {FAQ.map((f) => (
+            {HOME_FAQ.map((f) => (
               <details key={f.q} className="group border-2 border-ink bg-chalk p-4 open:bg-paper">
                 <summary className="cursor-pointer list-none font-semibold marker:hidden">
                   {f.q}

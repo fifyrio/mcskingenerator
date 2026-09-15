@@ -21,7 +21,7 @@ export function buildAiEffectGroups(_tNav: Translate): NavDropdownGroup[] {
     {
       label: 'Minecraft',
       items: [
-        { label: 'AI Minecraft Skin', href: '/ai-image-effects/ai-minecraft-skin', icon: '🎮' },
+        { label: 'AI Minecraft Skin', href: '/ai-minecraft-skin-maker', icon: '🎮' },
         { label: 'Minecraft Skin Maker', href: '/minecraft-skin', icon: '⛏️' },
       ],
     },

@@ -3,7 +3,7 @@ import { Link as I18nLink } from '@/i18n/routing';
 const NAV = [
   { label: 'Editor', href: '/' },
   { label: 'Skin Packs', href: '/minecraft-skin-pack-maker' },
-  { label: 'AI Skins', href: '/ai-image-effects/ai-minecraft-skin' },
+  { label: 'AI Skins', href: '/ai-minecraft-skin-maker' },
   { label: 'Bedrock', href: '/minecraft-bedrock-skin-maker' },
   { label: 'Templates', href: '/#start' },
 ];

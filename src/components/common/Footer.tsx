@@ -23,7 +23,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li><Link href="/custom-minecraft-skin-maker" prefetch={false} className="text-sm text-white/60 hover:text-white transition-colors">Custom Minecraft Skin Maker</Link></li>
               <li><Link href="/minecraft-skin-pack-maker" prefetch={false} className="text-sm text-white/60 hover:text-white transition-colors">Minecraft Skin Pack Maker</Link></li>
-              <li><Link href="/ai-image-effects/ai-minecraft-skin" prefetch={false} className="text-sm text-white/60 hover:text-white transition-colors">AI Minecraft Skin Maker</Link></li>
+              <li><Link href="/ai-minecraft-skin-maker" prefetch={false} className="text-sm text-white/60 hover:text-white transition-colors">AI Minecraft Skin Maker</Link></li>
               <li><Link href="/minecraft-bedrock-skin-maker" prefetch={false} className="text-sm text-white/60 hover:text-white transition-colors">Minecraft Bedrock Skin Maker</Link></li>
               <li><Link href="/free-minecraft-skin-maker" prefetch={false} className="text-sm text-white/60 hover:text-white transition-colors">Free Minecraft Skin Maker</Link></li>
             </ul>

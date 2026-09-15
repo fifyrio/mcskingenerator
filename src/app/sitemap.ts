@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/custom-minecraft-skin-maker',
     '/minecraft-skin-pack-maker',
-    '/ai-image-effects/ai-minecraft-skin',
+    '/ai-minecraft-skin-maker',
     '/minecraft-bedrock-skin-maker',
     '/free-minecraft-skin-maker',
     '/minecraft-skin',
